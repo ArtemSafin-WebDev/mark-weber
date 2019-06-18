@@ -1,0 +1,34 @@
+.page-header {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.page-header__logo {
+    margin-right: 45px;
+}
+
+.page-header__logo-image {
+    width: 128px;
+    display: block;
+}
+
+.page-header__since-2007-image {
+    width: 60px;
+    margin-right: 20px;
+}
+
+.page-header__since-2007 {
+    display: flex;
+    align-items: center;
+}
+
+
+.page-header__since-2007-text {
+    color: white;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+}

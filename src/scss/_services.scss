@@ -1,0 +1,204 @@
+.services {
+    height: 100vh;
+    max-height: 855px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+}
+
+.services__video-slider {
+    position: absolute;
+    width: 100vw;
+    left: calc(-1 * ((100vw - 100%) / 2));
+    top: 0;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+    overflow: hidden;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: rgba(black, .8);
+    }
+}
+
+.services__video-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility 0s linear .3s;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transition: .3s;
+    }
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.services__navigation {
+    margin-top: 100px;
+    display: flex;
+    flex-grow: 1;
+}
+
+.services__navigation-controls {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.services__navigation-description-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 30px;
+}
+
+.services__navigation-description {
+    position: relative;
+    width: 452px;
+    margin-left: 50px;
+    min-height: 100px;
+}
+
+.services__navigation-description-text {
+    font-size: 23px;
+    line-height: 30px;
+    color: white;
+    transition: 0.2s linear;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s, visibility 0s linear 0.3s;
+    transform: translateY(-100%);
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+        transform: translateY(0);
+    }
+    &.previously-active {
+        transform: translateY(100%);
+    }
+}
+
+.services__navigation-leading-text {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    line-height: 22px;
+    &::after {
+        content: '';
+        width: 30px;
+        height: 3px;
+        background-color: $primary-color;
+        margin-left: 10px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+.services__navigation-list-wrapper {
+    margin-top: -13px;
+    margin-left: 32px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 78px;
+}
+
+.services__navigation-list {
+    list-style: none;
+}
+
+.services__navigation-link {
+    color: white;
+    font-size: 27px;
+    line-height: 53px;
+    font-weight: 300;
+    white-space: nowrap;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .active & {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 53px;
+    }
+}
+
+.services__buttons {
+    margin-top: auto;
+    display: flex;
+}
+
+.services__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    margin-right: 30px;
+    &--prev {
+        margin-bottom: -45px;
+        svg {
+            rect {
+                transform-origin: center top;
+                transform: scaleY(0);
+            }
+        }
+        &:hover {
+            svg {
+                transform: translateY(-8px);
+                rect {
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+    &--next {
+        svg {
+            rect {
+                transform-origin: center bottom;
+                transform: scaleY(0);
+            }
+        }
+        &:hover {
+            svg {
+                transform: translateY(8px);
+                rect {
+                    transform: scaleY(1);
+                }
+            }
+        }
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    svg {
+        fill: white;
+        transition: transform 0.3s ease-out;
+        rect {
+            transition: transform 0.3s;
+        }
+    }
+}

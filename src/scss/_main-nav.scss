@@ -1,0 +1,22 @@
+.main-nav {
+    margin-left: auto;
+}
+
+
+.main-nav__burger-btn {
+    width: 55px;
+    height: 55px;
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .2s, visibility 0s linear .2s;
+    &::before {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        box-shadow: 0 7px 0 black, 0 -7px 0 black;
+    }
+}
