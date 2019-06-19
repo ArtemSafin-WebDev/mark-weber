@@ -5,7 +5,8 @@ $red: #D81E23;
 $bg-grey: #E2E2E0;
 
 
-$primary-color: #FEC70A;
+$primary-color: #F7DD85;
+$primary-saturated: #FEC70A;
 
 
 // Fonts
@@ -16,6 +17,23 @@ $proxima: 'Proxima Nova', 'Arial', sans-serif;
 // Widths
 
 $max-container-width: 1560px;
+
+
+// Breakpoints
+
+$large-desktop-width: 1600px;
+$desktop-width: 1366px;
+$laptop-width: 1200px;
+$tablet-width: 1024px;
+$small-tablet-width: 968px;
+$mobile-width: 768px;
+$small-mobile-width: 576px;
+$supersmall-mobile-width: 360px;
+
+// Retina
+
+$dpi: 144dpi;
+$dppx: 1.5dppx;
 
 
 

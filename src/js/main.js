@@ -4,6 +4,7 @@
 import objectFitImages from 'object-fit-images';
 import detectIt from 'detect-it';
 import servicesSlider from './servicesSlider';
+import menu from './menu';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -26,4 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Слайдер услуг 
 
     servicesSlider();
+
+    // Меню
+
+    menu();
 });
