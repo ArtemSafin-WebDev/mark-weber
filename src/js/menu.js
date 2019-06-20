@@ -1,4 +1,5 @@
 import { debounce, throttle } from 'lodash';
+import { TweenMax, Elastic } from 'gsap/TweenMax';
 
 export default function() {
     // Переменные
@@ -7,8 +8,8 @@ export default function() {
     const burger = document.querySelector('.js-burger');
     const content = document.querySelector('.js-menu-content');
     let followModeOn = false;
-    const submenuLinks = Array.from(document.querySelectorAll('.js-submenu-trigger'))
-    
+    const submenuLinks = Array.from(document.querySelectorAll('.js-submenu-trigger'));
+
     // let trackingTriggered = false;
 
     // Код выполняемый на старте
@@ -78,7 +79,20 @@ export default function() {
         menu.style.bottom = '';
     }
 
-    function showDropdown() {}
+    function showDropdown(list) {
+        const items = Array.from(list.querySelectorAll('li'));
+        TweenMax.set(list, { clearProps: 'all' });
+        TweenMax.set(items, { clearProps: 'all' });
+        TweenMax.set(list, { height: 'auto' });
+        TweenMax.from(list, 0.2, { height: 0 });
+        TweenMax.staggerFrom(items, 0.5, { autoAlpha: 0, y: -20 }, 0.2);
+    }
+
+    function hideDropdown(list) {
+        const items = Array.from(list.querySelectorAll('li'));
+        TweenMax.to(items, .4, { autoAlpha: 0 });
+        TweenMax.to(list, 0.2, { height: 0, delay: 0.4});
+    }
 
     function outsideClickHandler() {
         if (!menu.contains(event.target)) {
@@ -94,6 +108,28 @@ export default function() {
 
     burger.addEventListener('click', showMenu);
     burger.addEventListener('mouseenter', showMenu);
+
+    submenuLinks.forEach(link => {
+        let listShown = false;
+        const list = link.parentElement.querySelector('.js-submenu-list');
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            if (!listShown) {
+                showDropdown(list);
+                listShown = true;
+            } else {
+                hideDropdown(list);
+                listShown = false;
+            }
+        });
+        // link.addEventListener('mouseenter', event => {
+        //     event.preventDefault();
+        //     if (!listShown) {
+        //         showDropdown(list);
+        //         listShown = true;
+        //     }
+        // });
+    });
 
     window.addEventListener(
         'scroll',
