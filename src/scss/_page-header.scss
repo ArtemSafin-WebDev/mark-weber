@@ -8,6 +8,9 @@
 
 .page-header__logo {
     margin-right: 45px;
+    @include breakpoint(mobile) {
+        margin-right: 24px;
+    }
 }
 
 .page-header__logo-image {

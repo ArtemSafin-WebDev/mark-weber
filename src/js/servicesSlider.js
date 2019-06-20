@@ -1,3 +1,5 @@
+import { debounce } from 'lodash';
+
 export default function() {
     // Переменные
 
@@ -16,6 +18,8 @@ export default function() {
 
     const prevButton = document.querySelector('.js-services-prev');
     const nextButton = document.querySelector('.js-services-next');
+
+    const services = document.querySelector('.services');
 
     // Функции
 
@@ -74,6 +78,22 @@ export default function() {
         }
     }
 
+    function setSliderMinHeight() {
+        services.style.minHeight = document.documentElement.clientHeight + 'px';
+    }
+
+    function removeSliderMinHeight() {
+        services.style.minHeight = '';
+    }
+
+    function checkWidthAndSetHeight() {
+        if (window.matchMedia('(max-width: 768px)').matches) {
+            setSliderMinHeight()
+        } else {
+            removeSliderMinHeight()
+        }
+    }
+
     // Установка обработчиков событий
 
     navigationLinks.forEach((link, index) => {
@@ -91,4 +111,11 @@ export default function() {
         event.preventDefault();
         prevActiveLink();
     });
+
+    checkWidthAndSetHeight();
+
+    window.addEventListener(
+        'resize',
+        debounce(checkWidthAndSetHeight, 300)
+    );
 }

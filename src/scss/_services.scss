@@ -6,6 +6,12 @@
     flex-direction: column;
     z-index: 1;
     position: relative;
+    @include breakpoint(mobile) {
+        max-height: initial;
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 30px;
+    }
 }
 
 .services__video-slider {
@@ -32,14 +38,14 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0s linear 0.3s;
-   
+
     &.active {
         opacity: 1;
         visibility: visible;
         transition: 0.3s;
         video {
             transform: translateZ(0) scale(1);
-        }  
+        }
     }
     video {
         position: absolute;
@@ -50,7 +56,7 @@
         object-fit: cover;
         transform: translateZ(0) scale(1.1);
         backface-visibility: hidden;
-        transition: .3s;
+        transition: 0.3s;
     }
 }
 
@@ -58,27 +64,50 @@
     margin-top: 100px;
     display: flex;
     flex-grow: 1;
+    position: relative;
+    @include breakpoint(mobile) {
+        margin-top: auto;
+        margin-bottom: auto;
+        flex-grow: 0;
+    }
 }
 
 .services__navigation-controls {
     display: flex;
     flex-shrink: 0;
+    width: 510px;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-direction: column;
+    }
 }
 
-.services__navigation-description-wrapper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 30px;
-}
+// .services__navigation-description-wrapper {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     padding-bottom: 30px;
+// }
 
-.services__navigation-description {
-    position: relative;
-    width: 452px;
-    margin-left: 50px;
-    min-height: 100px;
+// .services__navigation-description {
+//     position: relative;
+//     width: 452px;
+//     margin-left: 50px;
+//     min-height: 100px;
+// }
+
+@keyframes textFadeInLeft {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .services__navigation-description-text {
@@ -87,22 +116,64 @@
     color: white;
     transition: 0.2s linear;
     position: absolute;
-    left: 0;
+    left: 510px;
     top: 0;
-    width: 100%;
+    right: 0;
     height: auto;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, transform 0.3s, visibility 0s linear 0.3s;
     transform: translateY(-100%);
+    padding-right: 260px;
+    display: flex;
+    @include breakpoint(laptop) {
+        padding-right: 0;
+    }
+    @include breakpoint(mobile) {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        display: none;
+        &::before {
+            content: '';
+            width: 100%;
+            height: 20px;
+            display: block;
+        }
+        &::after {
+            content: '';
+            width: 100%;
+            height: 40px;
+            display: block;
+        }
+    }
+
+    p {
+        max-width: 450px;
+        margin-right: auto;
+        @include breakpoint(mobile) {
+            max-width: initial;
+        }
+    }
     &.active {
         opacity: 1;
         visibility: visible;
         transition: 0.3s;
         transform: translateY(0);
+        display: block;
+
+        @include breakpoint(mobile) {
+            animation-name: textFadeInLeft;
+            animation-duration: 0.3s;
+        }
     }
     &.previously-active {
         transform: translateY(100%);
+        @include breakpoint(mobile) {
+            transform: translateY(0);
+        }
     }
 }
 
@@ -129,6 +200,12 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 78px;
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin: 0;
+        padding-bottom: 0;
+        margin-top: 30px;
+    }
 }
 
 .services__navigation-list {
@@ -158,6 +235,9 @@
 .services__buttons {
     margin-top: auto;
     display: flex;
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .services__button {

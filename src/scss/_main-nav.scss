@@ -18,11 +18,23 @@
     transition: transform 0.4s, opacity 0.4s, visibility 0s linear 0.4s;
     visibility: hidden;
     opacity: 0;
+    @include breakpoint(mobile) {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        transform: translateZ(0) translateY(30px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
     &.shown {
         transform: translateZ(0) scale(1);
         visibility: visible;
         opacity: 1;
         transition: 0.4s;
+        @include breakpoint(mobile) {
+            transform: translateZ(0) translateY(0);
+        }
     }
 }
 
@@ -35,6 +47,7 @@
     align-items: center;
     justify-content: center;
     transition: opacity 0.4s, visibility 0s linear 0.4s;
+    @include noHighlight();
     &::before {
         content: '';
         width: 20px;
@@ -52,6 +65,10 @@
     display: flex;
     flex-direction: column;
     margin: 0 -40px;
+    @include breakpoint(mobile) {
+        margin-bottom: auto;
+        margin-top: auto;
+    }
 }
 
 .main-nav__list-item {
@@ -78,6 +95,12 @@
     width: 100%;
     padding: 0 40px;
     position: relative;
+    outline: none;
+    @include noHighlight();
+    @include breakpoint(mobile) {
+        font-size: 24px;
+        line-height: 32px;
+    }
     &::before {
         content: '';
         height: 3px;
@@ -93,7 +116,8 @@
     &:visited {
         color: black;
     }
-    &:hover {
+    .no-touch &:hover,
+    .touch &:active {
         color: white;
     }
 
@@ -118,13 +142,17 @@
     line-height: 22px;
     display: block;
     margin-bottom: 5px;
-
+    @include noHighlight();
+    @include breakpoint(mobile) {
+        font-size: 16px;
+        line-height: 22px;
+    }
     &:link,
     &:visited {
         color: black;
     }
-    &:hover,
-    &:focus {
+    .no-touch &:hover,
+    .touch &:active {
         text-decoration: underline;
     }
 }
@@ -139,6 +167,11 @@
     font-size: 12px;
     line-height: 15px;
     margin-right: 20px;
+    @include noHighlight();
+    @include breakpoint(mobile) {
+        font-size: 16px;
+        line-height: 22px;
+    }
     &:last-child {
         margin-right: 0;
     }
@@ -147,8 +180,8 @@
         color: black;
     }
 
-    &:hover,
-    &:focus {
+    .no-touch &:hover,
+    .touch &:active {
         text-decoration: underline;
     }
 }
@@ -160,12 +193,17 @@
     font-weight: 700;
     margin-top: 35px;
     transition: 0.2s;
+    @include noHighlight();
+    @include breakpoint(mobile) {
+        font-size: 24px;
+        line-height: 32px;
+    }
     &:link,
     &:visited {
         color: black;
     }
-    &:hover,
-    &:focus {
+    .no-touch &:hover,
+    .touch &:active {
         color: white;
     }
 }
@@ -191,12 +229,19 @@
     line-height: 15px;
     transition: color 0.2s;
     position: relative;
-  
+    display: block;
+    width: 100%;
+    @include noHighlight();
+    @include breakpoint(mobile) {
+        font-size: 16px;
+        line-height: 22px;
+    }
     &:link,
     &:visited {
         color: black;
     }
-    &:hover {
+    .no-touch &:hover,
+    .touch &:active {
         color: white;
     }
 }

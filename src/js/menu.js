@@ -1,5 +1,5 @@
 import { debounce, throttle } from 'lodash';
-import { TweenMax, Elastic } from 'gsap/TweenMax';
+import { TweenMax } from 'gsap/TweenMax';
 
 export default function() {
     // Переменные
@@ -9,8 +9,7 @@ export default function() {
     const content = document.querySelector('.js-menu-content');
     let followModeOn = false;
     const submenuLinks = Array.from(document.querySelectorAll('.js-submenu-trigger'));
-
-    // let trackingTriggered = false;
+    let notShowWhenScrolledUp = false;
 
     // Код выполняемый на старте
 
@@ -43,20 +42,19 @@ export default function() {
         hideMenu();
         content.addEventListener('mouseleave', hideMenu);
         fixMenu();
-        // trackingTriggered = true;
     }
 
     function exitFollowMode() {
         followModeOn = false;
-        showMenu();
-        content.removeEventListener('mouseleave', hideMenu);
+        // showMenu();
+        // content.removeEventListener('mouseleave', hideMenu);
         unfixMenu();
-        // if (!trackingTriggered) {
-        //     showMenu();
-        //     content.removeEventListener('mouseleave', hideMenu);
-        // } else {
-        //     return
-        // }
+        if (!notShowWhenScrolledUp) {
+            showMenu();
+            content.removeEventListener('mouseleave', hideMenu);
+        } else {
+            return;
+        }
     }
 
     function fixMenu() {
@@ -95,7 +93,7 @@ export default function() {
     }
 
     function outsideClickHandler() {
-        if (!menu.contains(event.target)) {
+        if (!menu.contains(event.target) && event.target !== menu) {
             content.classList.remove('shown');
             burger.classList.remove('hidden');
             hideMenu();
@@ -163,7 +161,7 @@ export default function() {
     // Отслеживание изменения ширины вьюпорта
 
     if (matchMedia) {
-        const mq = window.matchMedia('(max-width: 1024px)');
+        const mq = window.matchMedia('(max-width: 1200px)');
         mq.addListener(WidthChange);
         WidthChange(mq);
     }
@@ -171,8 +169,11 @@ export default function() {
     function WidthChange(mq) {
         if (mq.matches) {
             hideMenu();
+            notShowWhenScrolledUp = true;
         } else {
             showMenu();
+            notShowWhenScrolledUp = false;
         }
     }
+
 }
