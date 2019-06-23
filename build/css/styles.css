@@ -1119,13 +1119,21 @@ img {
 
 .blog-slider {
   margin-right: calc(-1 * (100vw - 100%) / 2);
+  margin-left: calc(-1 * (100vw - 100%) / 2);
   margin-top: 80px; }
+  @media only screen and (max-width: 1600px) {
+    .blog-slider {
+      margin-left: -40px; } }
   .blog-slider .swiper-slide {
     width: 314px; }
   .blog-slider .swiper-slide__wide {
     width: 452px; }
   .blog-slider .swiper-container {
-    padding-left: 80px; }
+    display: flex;
+    padding-left: calc(20px + (100% - 1560px) / 2); }
+    @media only screen and (max-width: 1600px) {
+      .blog-slider .swiper-container {
+        padding-left: 40px; } }
 
 .blog-slider__card:link, .blog-slider__card:visited {
   color: black; }

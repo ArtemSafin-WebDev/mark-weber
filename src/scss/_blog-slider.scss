@@ -1,6 +1,10 @@
 .blog-slider {
     margin-right: calc(-1 * (100vw - 100%) / 2);
+    margin-left: calc(-1 * (100vw - 100%) / 2);
     margin-top: 80px;
+    @include breakpoint(large-desktop) {
+        margin-left: -40px;
+    }
     .swiper-slide {
         width: 314px;
     }
@@ -11,7 +15,19 @@
 
 
     .swiper-container {
-        padding-left: 80px;
+        display: flex;
+        padding-left: calc(20px + (100% - 1560px) / 2);
+        @include breakpoint(large-desktop) {
+            padding-left: 40px;
+        }
+        // &::before {
+        //     content: '';
+        //     width: calc((100% - 1560px) / 2);
+        //     height: 30px;
+        //     background-color: red;
+        //     display: block;
+        //     flex-shrink: 0;
+        // }
     }
 }
 
