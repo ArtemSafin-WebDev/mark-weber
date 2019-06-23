@@ -49,9 +49,14 @@ export default function() {
         }
         activeLink = link;
         link.parentElement.classList.add('active');
-        activeLinkIndex = index;
-        changeSlide(index);
-        setVideoSlide(index);
+        if (activeLinkIndex === index) {
+            return
+        } else {
+            activeLinkIndex = index;
+            changeSlide(index);
+            setVideoSlide(index);
+        }
+       
     }
 
     function nextActiveLink() {

@@ -1,5 +1,6 @@
 import { debounce, throttle } from 'lodash';
 import { TweenMax } from 'gsap/TweenMax';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 export default function() {
     // Переменные
@@ -10,6 +11,8 @@ export default function() {
     let followModeOn = false;
     const submenuLinks = Array.from(document.querySelectorAll('.js-submenu-trigger'));
     let notShowWhenScrolledUp = false;
+    const menuClose = document.querySelector('.js-menu-close-btn');
+    let scrollBlocked = false;
 
     // Код выполняемый на старте
 
@@ -26,6 +29,10 @@ export default function() {
         content.classList.add('shown');
         burger.classList.add('hidden');
         document.addEventListener('click', outsideClickHandler);
+        if (window.matchMedia('(max-width: 768px)').matches && !scrollBlocked) {
+            disableBodyScroll(content);
+            scrollBlocked = true;
+        }
     }
 
     function hideMenu(event) {
@@ -35,6 +42,10 @@ export default function() {
         content.classList.remove('shown');
         burger.classList.remove('hidden');
         document.removeEventListener('click', outsideClickHandler);
+        if (scrollBlocked) {
+            enableBodyScroll(content);
+            scrollBlocked = false;
+        }
     }
 
     function enterFollowMode() {
@@ -46,8 +57,7 @@ export default function() {
 
     function exitFollowMode() {
         followModeOn = false;
-        // showMenu();
-        // content.removeEventListener('mouseleave', hideMenu);
+
         unfixMenu();
         if (!notShowWhenScrolledUp) {
             showMenu();
@@ -88,8 +98,8 @@ export default function() {
 
     function hideDropdown(list) {
         const items = Array.from(list.querySelectorAll('li'));
-        TweenMax.to(items, .4, { autoAlpha: 0 });
-        TweenMax.to(list, 0.2, { height: 0, delay: 0.4});
+        TweenMax.to(items, 0.4, { autoAlpha: 0 });
+        TweenMax.to(list, 0.2, { height: 0, delay: 0.4 });
     }
 
     function outsideClickHandler() {
@@ -106,6 +116,10 @@ export default function() {
 
     burger.addEventListener('click', showMenu);
     burger.addEventListener('mouseenter', showMenu);
+    menuClose.addEventListener('click', function(event) {
+        event.preventDefault();
+        hideMenu();
+    });
 
     submenuLinks.forEach(link => {
         let listShown = false;
@@ -154,6 +168,10 @@ export default function() {
             if (Math.trunc(window.scrollY) > 0) {
                 enterFollowMode();
             }
+            if (!window.matchMedia('(max-width: 768px)').matches && scrollBlocked) {
+                enableBodyScroll(content);
+                scrollBlocked = false;
+            }
         }),
         300
     );
@@ -175,5 +193,4 @@ export default function() {
             notShowWhenScrolledUp = false;
         }
     }
-
 }
