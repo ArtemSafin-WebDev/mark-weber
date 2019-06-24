@@ -23,6 +23,7 @@
     "detect-it": "^3.0.5",
     "gsap": "^2.1.3",
     "gulp-prettier": "^2.1.0",
+    "inputmask": "^4.0.8",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",

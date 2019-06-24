@@ -1,7 +1,7 @@
 .services {
     height: 100vh;
     max-height: 855px;
-    padding-top: 100px;
+    // padding-top: 100px;
     display: flex;
     flex-direction: column;
     z-index: 1;
@@ -149,6 +149,16 @@
             display: block;
         }
     }
+    @include breakpoint(supersmall-mobile) {
+        font-size: 18px;
+        line-height: 24px;
+        &::before {
+            height: 10px;
+        }
+        &::after {
+            height: 20px;
+        }
+    }
 
     p {
         max-width: 450px;
@@ -221,6 +231,10 @@
     outline: none;
     user-select: none;
     @include noHighlight();
+    @include breakpoint(supersmall-mobile) {
+        font-size: 22px;
+        line-height: 40px;
+    }
     &:link,
     &:visited {
         color: white;
@@ -231,6 +245,10 @@
         font-size: 32px;
         line-height: 53px;
         cursor: defult;
+        @include breakpoint(supersmall-mobile) {
+            font-size: 28px;
+            line-height: 40px;
+        }
     }
 }
 
@@ -258,8 +276,7 @@
                 transform: scaleY(0);
             }
         }
-        .no-touch &:hover,
-        .touch &:active {
+        &:hover {
             svg {
                 transform: translateY(-8px);
                 rect {
@@ -275,8 +292,7 @@
                 transform: scaleY(0);
             }
         }
-        .no-touch &:hover,
-        .touch &:active {
+        &:hover {
             svg {
                 transform: translateY(8px);
                 rect {

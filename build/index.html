@@ -4,12 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet" />
+
         <link rel="stylesheet" href="css/styles.min.css" />
 
-        <!-- <link rel="preload" href="misc/keyboard-typing.mp4" as="style"/>
-        <link rel="preload" href="misc/iphone-scroll.mp4" as="style"/>
-        <link rel="preload" href="misc/open-plan-working.mp4" as="style"/>
-        <link rel="preload" href="misc/working-with-espresso.mp4" as="style"/> -->
         <title>
             Mark Weber
         </title>
@@ -308,11 +306,64 @@
                             </svg>
                         </a>
                     </div>
+                    <div class="request">
+                        <span class="request__welcome">
+                            Добро пожаловать
+                        </span>
+                        <div class="request__form-block">
+                            <h2 class="request__heading">
+                                Заявка на проект
+                                <svg width="32" height="28" aria-hidden="true" class="icon-plane">
+                                    <use xlink:href="#plane" />
+                                </svg>
+                            </h2>
+                            <form action="/" method="POST" class="request__form">
+                                <div class="request__form-group">
+                                    <label for="task" class="request__label">Опишите задачу</label>
+                                    <textarea name="task" id="task" class="request__textarea"></textarea>
+                                </div>
+                                <div class="request__form-group">
+                                    <label for="name" class="request__label">Ваше имя</label>
+                                    <input id="name" type="text" class="request__form-input" name="name" />
+                                </div>
+                                <div class="request__form-group">
+                                    <label for="phone" class="request__label">Ваш телефон</label>
+                                    <input id="phone" type="text" class="request__form-input js-phone-input" name="phone" />
+                                </div>
+                                <button class="request__submit" type="submit">
+                                    <span class="request__submit-content">
+                                        Отправить<svg width="8" height="14" aria-hidden="true" class="icon-right-arrow">
+                                            <use xlink:href="#arrow-right" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </main>
             <footer class="page-footer">
                 <div class="container">
-                    Footer
+                    <div class="page-footer__content">
+                        <a href="tel:+78002504406" class="page-footer__link">
+                            <svg width="15" height="15" aria-hidden="true" class="icon-phone">
+                                <use xlink:href="#phone" />
+                            </svg>
+                            8 800 250-44-06
+                        </a>
+                        <a href="mailto:info@markweber.ru" class="page-footer__link">
+                            <svg width="15" height="15" aria-hidden="true" class="icon-mail">
+                                <use xlink:href="#mail" />
+                            </svg>
+                            info@markweber.ru
+                        </a>
+                        <a href="#" class="page-footer__link">
+                            <svg width="15" height="15" aria-hidden="true" class="icon-location">
+                                <use xlink:href="#location" />
+                            </svg>
+                            Казань, ул. Большая Красная, д. 59
+                        </a>
+                    </div>
                 </div>
             </footer>
 

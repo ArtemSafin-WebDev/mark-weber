@@ -16,11 +16,17 @@
 .page-header__logo-image {
     width: 128px;
     display: block;
+    @include breakpoint(supersmall-mobile) {
+        width: 102px;
+    }
 }
 
 .page-header__since-2007-image {
     width: 60px;
     margin-right: 20px;
+    @include breakpoint(supersmall-mobile) {
+        width: 48px;
+    }
 }
 
 .page-header__since-2007 {

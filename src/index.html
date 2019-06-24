@@ -3,10 +3,6 @@
     <head>
         <!-- partial:partials/_meta.html -->
         <!-- partial -->
-        <!-- <link rel="preload" href="misc/keyboard-typing.mp4" as="style"/>
-        <link rel="preload" href="misc/iphone-scroll.mp4" as="style"/>
-        <link rel="preload" href="misc/open-plan-working.mp4" as="style"/>
-        <link rel="preload" href="misc/working-with-espresso.mp4" as="style"/> -->
         <title>
             Mark Weber
         </title>
@@ -213,6 +209,40 @@
                                 <use xlink:href="#arrow-right" />
                             </svg>
                         </a>
+                    </div>
+                    <div class="request">
+                        <span class="request__welcome">
+                            Добро пожаловать
+                        </span>
+                        <div class="request__form-block">
+                            <h2 class="request__heading">
+                                Заявка на проект
+                                <svg width="32" height="28" aria-hidden="true" class="icon-plane">
+                                    <use xlink:href="#plane" />
+                                </svg>
+                            </h2>
+                            <form action="/" method="POST" class="request__form">
+                                <div class="request__form-group">
+                                    <label for="task" class="request__label">Опишите задачу</label>
+                                    <textarea name="task" id="task" class="request__textarea"></textarea>
+                                </div>
+                                <div class="request__form-group">
+                                    <label for="name" class="request__label">Ваше имя</label>
+                                    <input id="name" type="text" class="request__form-input" name="name" />
+                                </div>
+                                <div class="request__form-group">
+                                    <label for="phone" class="request__label">Ваш телефон</label>
+                                    <input id="phone" type="text" class="request__form-input js-phone-input" name="phone" />
+                                </div>
+                                <button class="request__submit" type="submit">
+                                    <span class="request__submit-content">
+                                        Отправить<svg width="8" height="14" aria-hidden="true" class="icon-right-arrow">
+                                            <use xlink:href="#arrow-right" />
+                                        </svg>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </main>

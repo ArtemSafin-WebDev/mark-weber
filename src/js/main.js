@@ -6,6 +6,7 @@ import detectIt from 'detect-it';
 import servicesSlider from './servicesSlider';
 import menu from './menu';
 import blogSlider from './blogSlider';
+import inputMask from './inputMask';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -36,4 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Слайдер блога
 
     blogSlider();
+
+    // Маска ввода
+
+    inputMask();
 });

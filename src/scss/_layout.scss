@@ -3,6 +3,9 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 40px;
+    @include breakpoint(supersmall-mobile) {
+        padding: 0 20px;
+    }
     &--flex {
         display: flex;
     }
@@ -14,6 +17,14 @@
 
 .page-content {
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+main .container > *:first-child {
+    padding-top: 100px;
 }
 
 
