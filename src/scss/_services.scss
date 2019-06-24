@@ -219,6 +219,7 @@
     font-weight: 300;
     white-space: nowrap;
     outline: none;
+    user-select: none;
     @include noHighlight();
     &:link,
     &:visited {
@@ -257,7 +258,8 @@
                 transform: scaleY(0);
             }
         }
-        &:hover {
+        .no-touch &:hover,
+        .touch &:active {
             svg {
                 transform: translateY(-8px);
                 rect {
@@ -273,7 +275,8 @@
                 transform: scaleY(0);
             }
         }
-        &:hover {
+        .no-touch &:hover,
+        .touch &:active {
             svg {
                 transform: translateY(8px);
                 rect {
