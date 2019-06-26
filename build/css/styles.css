@@ -1274,6 +1274,9 @@ main .container > *:first-child {
   width: 100%; }
   .blog-slider__card:link, .blog-slider__card:visited {
     color: black; }
+  .no-touch .blog-slider__card:hover .blog-slider__small-image,
+  .touch .blog-slider__card:active .blog-slider__small-image {
+    transform: scale(1.05); }
 
 .blog-slider__description-text {
   font-size: 18px;

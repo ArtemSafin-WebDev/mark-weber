@@ -110,6 +110,12 @@
     &:visited {
         color: black;
     }
+    .no-touch &:hover,
+    .touch &:active {
+        .blog-slider__small-image {
+            transform: scale(1.05);
+        }
+    }
 }
 
 .blog-slider__description-text {
