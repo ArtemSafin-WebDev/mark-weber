@@ -1,12 +1,14 @@
 {
   "name": "modern-boilerplate",
   "version": "1.0.0",
-  "description": "Modern boilerplate with Gulp and Webpack",
+  "description": "Mark Weber FrontEnd",
   "main": "index.js",
   "scripts": {
     "build": "gulp build-production",
-    "dev": "gulp build && gulp serve"
+    "dev": "gulp build && gulp serve",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://github.com/ArtemSafin-WebDev/mark-weber",
   "keywords": [],
   "author": "",
   "license": "MIT",
@@ -41,6 +43,7 @@
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
+    "gh-pages": "^2.0.1",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-csso": "^3.0.1",

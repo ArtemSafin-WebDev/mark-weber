@@ -232,8 +232,8 @@
                                     </div>
                                     <div class="swiper-slide swiper-slide__wide">
                                         <a href="#" class="blog-slider__card">
-                                            <span class="blog-slider__image-container blog-slider__image-container--notebook">
-                                                <!-- <img src="img/type-2.jpg" alt="" class="blog-slider__image" /> -->
+                                            <span class="blog-slider__image-container">
+                                                <span class="blog-slider__small-image" style="background-image:url(img/type-3.png)"> </span>
                                                 <span class="blog-slider__image-annotation-block"
                                                     ><span class="blog-slider__image-annotation-label">Новая работа</span>
                                                     <span class="blog-slider__image-annotation-details">
@@ -275,8 +275,8 @@
                                     </div>
                                     <div class="swiper-slide swiper-slide__wide">
                                         <a href="#" class="blog-slider__card">
-                                            <span class="blog-slider__image-container blog-slider__image-container--notebook">
-                                                <!-- <img src="img/type-2.jpg" alt="" class="blog-slider__image" /> -->
+                                            <span class="blog-slider__image-container">
+                                                <span class="blog-slider__small-image" style="background-image:url(img/type-3.png)"> </span>
                                                 <span class="blog-slider__image-annotation-block"
                                                     ><span class="blog-slider__image-annotation-label">Новая работа</span>
                                                     <span class="blog-slider__image-annotation-details">
@@ -362,6 +362,7 @@
                         <a href="#" class="portfolio__all-projects">Перейти в портфолио</a>
                     </div>
                     <div class="request">
+                        <span class="request__bg" style="background-image:url('img/form-bg.jpg')"> </span>
                         <span class="request__welcome">
                             Добро пожаловать
                         </span>
@@ -374,16 +375,13 @@
                             </h2>
                             <form action="/" method="POST" class="request__form">
                                 <div class="request__form-group">
-                                    <label for="task" class="request__label">Опишите задачу</label>
-                                    <textarea name="task" id="task" class="request__textarea"></textarea>
+                                    <textarea name="task" id="task" class="request__textarea" placeholder="Опишите задачу"></textarea>
                                 </div>
                                 <div class="request__form-group">
-                                    <label for="name" class="request__label">Ваше имя</label>
-                                    <input id="name" type="text" class="request__form-input" name="name" />
+                                    <input id="name" type="text" class="request__form-input" name="name" placeholder="Ваше имя" required />
                                 </div>
                                 <div class="request__form-group">
-                                    <label for="phone" class="request__label">Ваш телефон</label>
-                                    <input id="phone" type="text" class="request__form-input js-phone-input" name="phone" />
+                                    <input id="phone" type="text" class="request__form-input js-phone-input" name="phone" placeholder="Ваш телефон" />
                                 </div>
                                 <button class="request__submit" type="submit">
                                     <span class="request__submit-content">

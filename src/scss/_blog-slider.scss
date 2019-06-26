@@ -37,6 +37,14 @@
 
     .swiper-slide__wide {
         width: 452px;
+        .blog-slider__image-container {
+            background-color: #daebf7;
+            min-height: 226px;
+            transition: background-color 0.3s;
+            @include breakpoint(mobile) {
+                min-height: 250px;
+            }
+        }
         @include breakpoint(mobile) {
             max-width: 90%;
         }
@@ -50,9 +58,28 @@
         }
 
         @include breakpoint(mobile) {
-            
-            padding-left: 0;
+            padding-left: 40px;
         }
+
+        @include breakpoint(supersmall-mobile) {
+            padding-left: 20px;
+        }
+    }
+}
+
+.blog-slider__small-image {
+    position: absolute;
+    width: 288px;
+    height: 156px;
+    bottom: 18px;
+    right: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    transition: transform 0.3s ease-out;
+    @include breakpoint(mobile) {
+        width: 204px;
+        height: 124px;
     }
 }
 
@@ -77,6 +104,8 @@
 }
 
 .blog-slider__card {
+    display: block;
+    width: 100%;
     &:link,
     &:visited {
         color: black;
@@ -95,33 +124,7 @@
     overflow: hidden;
     position: relative;
     display: block;
-    &--notebook {
-        background-color: #daebf7;
-        min-height: 226px;
-        transition: background-color 0.3s;
-        @include breakpoint(mobile) {
-            min-height: 250px;
-        }
-        &::before {
-            content: '';
-            position: absolute;
-            width: 288px;
-            height: 156px;
-            bottom: 18px;
-            right: 18px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-image: url('../img/type-3.png');
-            background-size: 100% auto;
-            transition: transform 0.3s ease-out;
-            @include breakpoint(mobile) {
-                width: 204px;
-                height: 124px;
-            }
-        }
-
-       
-    }
+    width: 100%;
 }
 
 .no-touch .blog-slider__card:hover .blog-slider__image-container,

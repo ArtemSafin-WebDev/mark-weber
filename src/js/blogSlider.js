@@ -10,10 +10,10 @@ export default function() {
             breakpoints: {
                 360: {
                     spaceBetween: 20,
-                    centeredSlides: true
+                    // centeredSlides: true
                 },
                 768: {
-                    centeredSlides: true
+                    // centeredSlides: true
                 }
             },
             on: {

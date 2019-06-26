@@ -5,6 +5,6 @@ export default function() {
 
   if (phoneNumber) {
       console.log('Adding mask')
-    Inputmask({ mask: '+7 (999) 999-99-99', clearMaskOnLostFocus: false }).mask(phoneNumber);
+    Inputmask({ mask: '+7 (999) 999-99-99' }).mask(phoneNumber);
   }
 }
