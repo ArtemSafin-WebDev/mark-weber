@@ -122,8 +122,7 @@
     height: auto;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, transform 0.3s, visibility 0s linear 0.3s;
-    transform: translateY(-100%);
+    transition: opacity 0.2s linear, visibility 0s linear 0.2s;
     padding-right: 260px;
     display: flex;
     @include breakpoint(laptop) {
@@ -134,8 +133,7 @@
         width: 100%;
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
-        display: none;
+        display: block;
         &::before {
             content: '';
             width: 100%;
@@ -170,21 +168,9 @@
     &.active {
         opacity: 1;
         visibility: visible;
-        transition: 0.3s;
-        transform: translateY(0);
-        display: block;
-
-        @include breakpoint(mobile) {
-            animation-name: textFadeInLeft;
-            animation-duration: 0.3s;
-        }
+        transition: opacity 0.2s linear;
     }
-    &.previously-active {
-        transform: translateY(100%);
-        @include breakpoint(mobile) {
-            transform: translateY(0);
-        }
-    }
+    
 }
 
 .services__navigation-leading-text {
@@ -240,7 +226,7 @@
         color: white;
     }
 
-    .active & {
+    &.active {
         font-weight: 700;
         font-size: 32px;
         line-height: 53px;

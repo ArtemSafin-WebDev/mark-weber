@@ -114,17 +114,7 @@
         font-size: 18px;
         line-height: 22px;
     }
-    &::before {
-        content: '';
-        height: 3px;
-        width: 16px;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        margin-top: -1.5px;
-        background-color: black;
-        display: none;
-    }
+   
     &:link,
     &:visited {
         color: black;
@@ -135,12 +125,10 @@
     }
 
     .active & {
+        color: white;
         &:hover {
-            color: black;
+            color: white;
             cursor: default;
-        }
-        &::before {
-            display: block;
         }
     }
 }
@@ -155,6 +143,7 @@
     line-height: 22px;
     display: block;
     margin-bottom: 5px;
+    transition: color .2s;
     @include noHighlight();
     @include breakpoint(mobile) {
         font-size: 16px;
@@ -170,7 +159,7 @@
     }
     .no-touch &:hover,
     .touch &:active {
-        text-decoration: underline;
+        color: white;
     }
 }
 
@@ -184,6 +173,7 @@
     font-size: 12px;
     line-height: 15px;
     margin-right: 20px;
+    transition: color .2s;
     @include noHighlight();
     @include breakpoint(mobile) {
         font-size: 16px;
@@ -203,7 +193,7 @@
 
     .no-touch &:hover,
     .touch &:active {
-        text-decoration: underline;
+        color: white;
     }
 }
 

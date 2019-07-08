@@ -3,10 +3,11 @@
 
 import objectFitImages from 'object-fit-images';
 import detectIt from 'detect-it';
-import servicesSlider from './servicesSlider';
-import menu from './menu';
+// import servicesSlider from './servicesSlider';
+import services from './services';
 import blogSlider from './blogSlider';
 import inputMask from './inputMask';
+import burgerMenu from './burgerMenu';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -28,11 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Слайдер услуг 
 
-    servicesSlider();
+    // servicesSlider();
+
+    services();
 
     // Меню
 
-    menu();
+    // menu();
+
+    burgerMenu();
 
     // Слайдер блога
 

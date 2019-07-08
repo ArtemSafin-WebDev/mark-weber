@@ -10,10 +10,6 @@ export default function() {
             breakpoints: {
                 360: {
                     spaceBetween: 20,
-                    // centeredSlides: true
-                },
-                768: {
-                    // centeredSlides: true
                 }
             },
             on: {
@@ -23,7 +19,6 @@ export default function() {
                     }
                 }
             }
-            // loop: true
         });
 
         const heading = document.querySelector('.js-blog-slider-heading');
