@@ -57,25 +57,65 @@ export default function() {
             } else {
                 const previousActiveDescriptionSlide = activeDescriptionSlide;
                 const newActiveDescriptionSlide = descriptionSlides[index];
-                newActiveDescriptionSlide.classList.add('active');
+                // newActiveDescriptionSlide.classList.add('active');
                 activeDescriptionSlide = newActiveDescriptionSlide;
-                previousActiveDescriptionSlide.classList.remove('active');
+                // previousActiveDescriptionSlide.classList.remove('active');
                 if (oldActiveLinkIndex && oldActiveLinkIndex > index) {
-                    // Направление вверх
+                    if (!window.matchMedia('(max-width: 768px)').matches) {
+                        // Направление вверх
 
-                    //// Анимируем активный слайд
-                    TweenMax.from(newActiveDescriptionSlide, 0.2, { y: newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all'});
+                        newActiveDescriptionSlide.classList.add('active');
+                        previousActiveDescriptionSlide.classList.remove('active');
 
-                    //// Анимируем предыдущий активный слайд
-                    TweenMax.to(previousActiveDescriptionSlide, 0.2, { y: -1 * newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all' });
+                        //// Анимируем активный слайд
+                        TweenMax.from(newActiveDescriptionSlide, 0.2, { y: newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all' });
+
+                        //// Анимируем предыдущий активный слайд
+                        TweenMax.to(previousActiveDescriptionSlide, 0.2, { y: -1 * newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all' });
+                    } else {
+                        // На мобильной ширине появление аккордеонами
+
+                        newActiveDescriptionSlide.classList.add('active');
+                        previousActiveDescriptionSlide.classList.remove('active');
+
+                        //// Раскрываем аккоредоном новый слайд
+
+                        TweenMax.set(newActiveDescriptionSlide, { clearProps: 'all' });
+                        TweenMax.set(newActiveDescriptionSlide, { height: 'auto' });
+                        TweenMax.from(newActiveDescriptionSlide, 0.2, { height: 0 });
+
+                        //// Закрываем аккордеоном старый слайд
+
+                        TweenMax.to(previousActiveDescriptionSlide, 0.2, { height: 0 });
+                    }
                 } else {
-                    // Направление вниз
+                    if (!window.matchMedia('(max-width: 768px)').matches) {
+                        // Направление вниз
 
-                    //// Анимируем активный слайд
-                    TweenMax.from(newActiveDescriptionSlide, 0.2, { y: -1 * newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all' });
+                        newActiveDescriptionSlide.classList.add('active');
+                        previousActiveDescriptionSlide.classList.remove('active');
 
-                    //// Анимируем предыдущий активный слайд
-                    TweenMax.to(previousActiveDescriptionSlide, 0.2, { y: newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all' });
+                        //// Анимируем активный слайд
+                        TweenMax.from(newActiveDescriptionSlide, 0.2, { y: -1 * newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all' });
+
+                        //// Анимируем предыдущий активный слайд
+                        TweenMax.to(previousActiveDescriptionSlide, 0.2, { y: newActiveDescriptionSlide.offsetHeight, ease: Power0.easeNone, clearProps: 'all' });
+                    } else {
+                        // На мобильной ширине появление аккордеонами
+
+                        newActiveDescriptionSlide.classList.add('active');
+                        previousActiveDescriptionSlide.classList.remove('active');
+
+                        //// Раскрываем аккоредоном новый слайд
+
+                        TweenMax.set(newActiveDescriptionSlide, { clearProps: 'all' });
+                        TweenMax.set(newActiveDescriptionSlide, { height: 'auto' });
+                        TweenMax.from(newActiveDescriptionSlide, 0.2, { height: 0 });
+
+                        //// Закрываем аккордеоном старый слайд
+
+                        TweenMax.to(previousActiveDescriptionSlide, 0.2, { height: 0 });
+                    }
                 }
             }
         };

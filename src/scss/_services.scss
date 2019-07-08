@@ -134,6 +134,8 @@
         opacity: 1;
         visibility: visible;
         display: block;
+        overflow: hidden;
+        height: 0;
         &::before {
             content: '';
             width: 100%;
@@ -169,6 +171,8 @@
         opacity: 1;
         visibility: visible;
         transition: opacity 0.2s linear;
+        display: block;
+        
     }
     
 }
