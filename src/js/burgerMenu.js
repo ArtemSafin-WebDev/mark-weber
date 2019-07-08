@@ -122,7 +122,10 @@ export default function() {
 
         //// Открытие меню при клике на бургере
 
-        burger.addEventListener('click', showMenu);
+        burger.addEventListener('click', event => {
+            event.preventDefault();
+            showMenu();
+        });
 
         //// Клик на крестике закрытия
 

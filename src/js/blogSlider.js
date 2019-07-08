@@ -15,7 +15,7 @@ export default function() {
             on: {
                 beforeResize() {
                     if (window.innerWidth <= 768) {
-                        slider.slides.css('width', '');
+                        blogSlider.slides.css('width', '');
                     }
                 }
             }

@@ -809,7 +809,8 @@ main .container > *:first-child {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.2s linear;
-    display: block; }
+    display: block;
+    height: auto; }
 
 .services__navigation-leading-text {
   color: white;
