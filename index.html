@@ -41,6 +41,14 @@
                         fill-rule="evenodd"
                     />
                 </symbol>
+                <symbol viewBox="0 0 86 86" id="play" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M43 0a43 43 0 1 0 43 43A43 43 0 0 0 43 0zm0 85a42 42 0 1 1 42-42 42 42 0 0 1-42 42z" />
+                    <path d="M37 53l18-9.5L37 34v19z" />
+                </symbol>
+                <symbol viewBox="0 0 86 86" id="play-bold" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M43 86a43 43 0 1 1 43-43 43 43 0 0 1-43 43zm0-83a40 40 0 1 0 40 40A40 40 0 0 0 43 3z" />
+                    <path d="M36.99 34v19l18-9.5-18-9.5z" />
+                </symbol>
             </svg>
         </div>
 
@@ -56,53 +64,61 @@
                             Создаем сайты корпораций
                         </p>
                     </div>
-                    <nav class="main-nav js-menu">
-                        <a href="#" class="main-nav__burger-btn js-burger"> </a>
+                    <nav class="main-nav js-menu js-initially-shown">
+                        <a href="#" class="main-nav__burger-btn js-burger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </a>
                         <div class="main-nav__content js-menu-content">
-                            <a href="#" class="main-nav__close-btn js-menu-close-btn"> </a>
-                            <ul class="main-nav__list">
-                                <li class="main-nav__list-item active">
-                                    <a class="main-nav__link">
-                                        Портфолио
+                            <div class="main-nav__content-wrapper">
+                                <!-- <a href="#" class="main-nav__close-btn js-menu-close-btn">
+                        
+                    </a> -->
+                                <ul class="main-nav__list">
+                                    <li class="main-nav__list-item active">
+                                        <a class="main-nav__link">
+                                            Портфолио
+                                        </a>
+                                    </li>
+                                    <li class="main-nav__list-item">
+                                        <a href="#" class="main-nav__link js-submenu-trigger">
+                                            Услуги
+                                        </a>
+                                        <ul class="main-nav__submenu-list js-submenu-list">
+                                            <li class="main-nav__submenu-list-item"><a href="#" class="main-nav__submenu-link">Создание сайта</a></li>
+                                            <li class="main-nav__submenu-list-item"><a href="#" class="main-nav__submenu-link">Продвижение сайта</a></li>
+                                            <li class="main-nav__submenu-list-item"><a href="#" class="main-nav__submenu-link">Создание сайта</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="main-nav__list-item">
+                                        <a href="#" class="main-nav__link">
+                                            Студия
+                                        </a>
+                                    </li>
+                                    <li class="main-nav__list-item">
+                                        <a href="#" class="main-nav__link">
+                                            Контакты
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="main-nav__contacts">
+                                    <a href="tel:+78002504406" class="main-nav__contact-link">8 800 250-44-06</a>
+                                    <a href="mailto:info@markweber.ru" class="main-nav__contact-link">info@markweber.ru</a>
+                                </div>
+                                <div class="main-nav__social">
+                                    <a href="#" class="main-nav__social-link">
+                                        Be
                                     </a>
-                                </li>
-                                <li class="main-nav__list-item">
-                                    <a href="#" class="main-nav__link js-submenu-trigger">
-                                        Услуги
+                                    <a href="#" class="main-nav__social-link">
+                                        Inst
                                     </a>
-                                    <ul class="main-nav__submenu-list js-submenu-list">
-                                        <li class="main-nav__submenu-list-item"><a href="#" class="main-nav__submenu-link">Создание сайта</a></li>
-                                        <li class="main-nav__submenu-list-item"><a href="#" class="main-nav__submenu-link">Продвижение сайта</a></li>
-                                        <li class="main-nav__submenu-list-item"><a href="#" class="main-nav__submenu-link">Создание сайта</a></li>
-                                    </ul>
-                                </li>
-                                <li class="main-nav__list-item">
-                                    <a href="#" class="main-nav__link">
-                                        Студия
+                                    <a href="#" class="main-nav__social-link">
+                                        Vk
                                     </a>
-                                </li>
-                                <li class="main-nav__list-item">
-                                    <a href="#" class="main-nav__link">
-                                        Контакты
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="main-nav__contacts">
-                                <a href="tel:+78002504406" class="main-nav__contact-link">8 800 250-44-06</a>
-                                <a href="mailto:info@markweber.ru" class="main-nav__contact-link">info@markweber.ru</a>
+                                </div>
+                                <a href="#" class="main-nav__application">Заявка на проект</a>
                             </div>
-                            <div class="main-nav__social">
-                                <a href="#" class="main-nav__social-link">
-                                    Be
-                                </a>
-                                <a href="#" class="main-nav__social-link">
-                                    Inst
-                                </a>
-                                <a href="#" class="main-nav__social-link">
-                                    Vk
-                                </a>
-                            </div>
-                            <a href="#" class="main-nav__application">Заявка на проект</a>
                         </div>
                     </nav>
                 </div>
@@ -124,12 +140,12 @@
                             </div>
                             <div class="services__video-slide js-services-video-slide">
                                 <video autoplay muted loop playsinline>
-                                    <source src="misc/open-plan-working.mp4" type="video/mp4" />
+                                    <source src="misc/keyboard-typing.mp4" type="video/mp4" />
                                 </video>
                             </div>
                             <div class="services__video-slide js-services-video-slide">
                                 <video autoplay muted loop playsinline>
-                                    <source src="misc/working-with-espresso.mp4" type="video/mp4" />
+                                    <source src="misc/iphone-scroll.mp4" type="video/mp4" />
                                 </video>
                             </div>
                         </div>
@@ -140,8 +156,8 @@
                                 </p>
                                 <div class="services__navigation-list-wrapper">
                                     <ul class="services__navigation-list">
-                                        <li class="services__navigation-list-item active">
-                                            <a href="#" class="services__navigation-link js-services-navigation-link">
+                                        <li class="services__navigation-list-item">
+                                            <a href="#" class="services__navigation-link js-services-navigation-link active">
                                                 Digital-дизайн
                                             </a>
                                             <div class="services__navigation-description-text js-services-description-slide active">
@@ -300,11 +316,18 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="blog-slider__paginator js-blog-slider-paginator">
-                            <svg width="15" height="15" aria-hidden="true" class="icon-arrow-right">
-                                <use xlink:href="#arrow-right" />
-                            </svg>
-                        </a>
+                        <div class="blog-slider__paginator-buttons js-blog-slider-paginator">
+                            <a href="#" class="blog-slider__paginator-button blog-slider__paginator-button--prev js-paginator-prev">
+                                <svg width="15" height="15" aria-hidden="true" class="icon-arrow-left">
+                                    <use xlink:href="#arrow-left" />
+                                </svg>
+                            </a>
+                            <a href="#" class="blog-slider__paginator-button blog-slider__paginator-button--next js-paginator-next">
+                                <svg width="15" height="15" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#arrow-right" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div class="portfolio">
                         <ul class="portfolio__list">
