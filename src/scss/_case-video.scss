@@ -1,0 +1,52 @@
+.case-video {
+    position: relative;
+    height: 123vh;
+    height: 60vw;
+    max-height: 870px;
+    z-index: 1;
+    position: relative;
+    margin-top: 140px;
+    // @include breakpoint(small-tablet) {
+    //     height: 60vw;
+    // }
+}
+
+
+
+.case-video__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100vw;
+    left: calc(-1 * ((100vw - 100%) / 2));
+    top: 0;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+    .icon-play-bold {
+        opacity: .6;
+        transition: opacity .3s;
+        fill: white;
+        z-index: 10;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        .icon-play-bold {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+.case-video__link-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    @include objectFitCover();
+}

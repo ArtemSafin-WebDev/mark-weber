@@ -17,7 +17,20 @@
         padding-top: 100px;
         padding-bottom: 100px;
         flex-grow: 1;
-        
+        @include breakpoint(laptop) {
+            flex-direction: column;
+        }
+    }
+}
+
+
+.case-top-block__heading {
+    font-size: 32px;
+    line-height: 45px;
+    font-weight: 700;
+    @include breakpoint(laptop) {
+        margin-top: auto;
+        // margin-bottom: auto;
     }
 }
 
@@ -81,6 +94,9 @@
 .case-top-block__content-right-column {
     display: flex;
     flex-direction: column;
+    @include breakpoint(laptop) {
+        flex-grow: 1;
+    }
 }
 
 .case-top-block__video-link {
@@ -89,6 +105,9 @@
     font-size: 20px;
     line-height: 26px;
     margin-top: auto;
+    // @include breakpoint(laptop) {
+    //     margin-top: 30px;
+    // }
     &:link,
     &:visited {
         color: #D8D8D8;

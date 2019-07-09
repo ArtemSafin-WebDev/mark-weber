@@ -2,6 +2,10 @@
     color: black;
     font-size: 18px;
     line-height: 22px;
+    display: block;
+    @include breakpoint(small-tablet) {
+        margin-bottom: 20px;
+    }
     &::after {
         content: '';
         width: 30px;
@@ -17,11 +21,17 @@
     display: flex;
     padding-top: 75px;
     padding-bottom: 130px;
+    @include breakpoint(small-tablet) {
+        flex-direction: column;
+    }
 }
 
 .case-details__about-project-left-column,
 .case-details__about-project-right-column {
     width: 50%;
+    @include breakpoint(small-tablet) {
+        width: 100%;
+    }
 }
 
 .case-details__project-link {
@@ -65,11 +75,17 @@
 
 .case-details__feature-description {
     display: flex;
+    @include breakpoint(small-tablet) {
+        flex-direction: column;
+    }
 }
 
 .case-details__feature-description-left-column,
 .case-details__feature-description-right-column {
     width: 50%;
+    @include breakpoint(small-tablet) {
+        width: 100%;
+    }
 }
 
 .case-details__feature-description-left-column {
@@ -88,6 +104,10 @@
 .case-details__feature-description-right-column {
     display: flex;
     border-left: 1px solid #a1a1a1;
+    @include breakpoint(small-tablet) {
+        border-left: none;
+        margin-top: 30px;
+    }
 }
 
 .case-details__feature-heading {
@@ -96,6 +116,10 @@
     font-weight: 700;
     width: 50%;
     margin: 0 auto;
+    @include breakpoint(small-tablet) {
+        margin: 0;
+        width: 100%;
+    }
 }
 
 .case-details__feature-description-text {
@@ -119,6 +143,10 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 42px;
+    @include breakpoint(small-tablet) {
+        margin-left: 0;
+        margin-right: 30px;
+    }
 }
 
 .case-details__feature-description-author-image {
@@ -131,6 +159,24 @@
 .case-details__slide-card {
     display: flex;
     flex-direction: column;
+}
+
+
+.case-details__slide-image-container {
+    height: 565px;
+    @include breakpoint(desktop) {
+        height: 420px;
+    }
+    @include breakpoint(laptop) {
+        height: 350px;
+    }
+}
+
+.case-details__slide-image {
+    display: block;
+    height: 100%;
+    max-width: none;
+    width: auto;
 }
 
 .case-details__slide-description {
@@ -163,7 +209,8 @@
     }
 
     .swiper-slide {
-        width: 60%;
+        // width: 60%;
+        width: auto;
         height: auto;
         display: flex;
         flex-direction: column;
