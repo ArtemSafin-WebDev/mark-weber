@@ -204,11 +204,18 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="blog-slider__paginator js-blog-slider-paginator">
-                            <svg width="15" height="15" aria-hidden="true" class="icon-arrow-right">
-                                <use xlink:href="#arrow-right" />
-                            </svg>
-                        </a>
+                        <div class="blog-slider__paginator-buttons js-blog-slider-paginator">
+                            <a href="#" class="blog-slider__paginator-button blog-slider__paginator-button--prev js-paginator-prev">
+                                <svg width="15" height="15" aria-hidden="true" class="icon-arrow-left">
+                                    <use xlink:href="#arrow-left" />
+                                </svg>
+                            </a>
+                            <a href="#" class="blog-slider__paginator-button blog-slider__paginator-button--next js-paginator-next">
+                                <svg width="15" height="15" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#arrow-right" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div class="portfolio">
                         <ul class="portfolio__list">
@@ -235,7 +242,6 @@
                                                 </svg>
                                             </span>
                                         </span>
-                                        
                                     </span>
                                 </a>
                             </li>
@@ -283,7 +289,7 @@
                                     <textarea name="task" id="task" class="request__textarea" placeholder="Опишите задачу"></textarea>
                                 </div>
                                 <div class="request__form-group">
-                                    <input id="name" type="text" class="request__form-input" name="name" placeholder="Ваше имя" required/>
+                                    <input id="name" type="text" class="request__form-input" name="name" placeholder="Ваше имя" required />
                                 </div>
                                 <div class="request__form-group">
                                     <input id="phone" type="text" class="request__form-input js-phone-input" name="phone" placeholder="Ваш телефон" />

@@ -8,6 +8,7 @@ import services from './services';
 import blogSlider from './blogSlider';
 import inputMask from './inputMask';
 import burgerMenu from './burgerMenu';
+import caseSlider from './caseSlider';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -46,4 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Маска ввода
 
     inputMask();
+
+
+    // Слайдер с изображениями проекта
+
+    caseSlider();
 });

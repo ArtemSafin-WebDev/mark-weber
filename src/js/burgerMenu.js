@@ -47,7 +47,7 @@ export default function() {
         function showMenu() {
             if (!menuShown) {
                 content.classList.add('shown');
-                burger.classList.add('hidden');
+                burger.classList.add('active');
                 document.addEventListener('click', outsideClickHandler);
                 menuShown = true;
                 if (window.matchMedia('(max-width: 768px)').matches && !scrollBlocked) {
@@ -60,7 +60,7 @@ export default function() {
         function hideMenu() {
             if (menuShown) {
                 content.classList.remove('shown');
-                burger.classList.remove('hidden');
+                burger.classList.remove('active');
                 document.removeEventListener('click', outsideClickHandler);
                 menuShown = false;
                 if (scrollBlocked) {
@@ -124,15 +124,19 @@ export default function() {
 
         burger.addEventListener('click', event => {
             event.preventDefault();
-            showMenu();
+            if (!menuShown) {
+                showMenu();
+            } else {
+                hideMenu();
+            }
         });
 
         //// Клик на крестике закрытия
 
-        menuClose.addEventListener('click', event => {
-            event.preventDefault();
-            hideMenu();
-        });
+        // menuClose.addEventListener('click', event => {
+        //     event.preventDefault();
+        //     hideMenu();
+        // });
 
         //// Обработчики событий для ссылок-аккордеонов
 
@@ -157,6 +161,14 @@ export default function() {
             burger.addEventListener('mouseenter', mouseEnterHandler);
         }
 
+        //// Закрываем меню при клике на темной области на мобильниках
+
+        function closeBorders(event) {
+            if (this === event.target) {
+                hideMenu();
+            }
+        }
+
         //// Прячем меню при ухода с мобильной ширины (на всякий случай)
 
         if (matchMedia) {
@@ -168,6 +180,9 @@ export default function() {
         function WidthChange(mq) {
             if (!mq.matches) {
                 hideMenu();
+                content.removeEventListener('click', closeBorders);
+            } else {
+                content.addEventListener('click', closeBorders);
             }
         }
 

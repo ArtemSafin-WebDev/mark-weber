@@ -174,37 +174,71 @@
     width: 242px;
 }
 
-.blog-slider__paginator {
-    width: 54px;
-    height: 54px;
-    background-color: $primary-saturated;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    transition: transform 0.3s;
+.blog-slider__paginator-buttons {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
+    transform: translateZ(0) translateX(-100%);
     position: absolute;
     right: 0;
     bottom: 38px;
-    opacity: 0;
-    transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
-    transform: translateZ(0) translateX(-100%);
-    visibility: hidden;
-    @include noHighlight();
+    z-index: 1;
+    display: flex;
+    align-items: center;
     @include breakpoint(mobile) {
         display: none;
-    }
-    &.blog-slider__paginator--reversed {
-        transform: translateZ(0) translateX(-100%) rotate(180deg);
     }
     &.shown {
         opacity: 1;
         transform: translateZ(0) translateX(0%);
         visibility: visible;
         transition: 0.2s;
-        &.blog-slider__paginator--reversed {
-            transform: translateZ(0) translateX(0%) rotate(180deg);
+    }
+}
+
+.blog-slider__paginator-button {
+    width: 54px;
+    height: 54px;
+    background-color: $primary-medium;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    position: relative;
+    z-index: 1;
+    transition: all .2s;
+    outline: none;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $primary-saturated;
+        z-index: -1;
+        transform: scale(0);
+        transition: transform .3s ease;
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+    @include noHighlight();
+
+
+    .no-touch &:hover,
+    .touch &:active {
+        &::before {
+            transform: scale(1);
         }
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0;
+        visibility: hidden;
+       
+        transition: opacity .2s, visibility 0s linear .2s;
     }
 }

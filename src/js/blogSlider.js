@@ -4,12 +4,25 @@ import { throttle } from 'lodash';
 export default function() {
     const blogSliderElement = document.querySelector('.js-blog-slider');
     if (blogSliderElement) {
+
+
+        const heading = document.querySelector('.js-blog-slider-heading');
+        const paginator = document.querySelector('.js-blog-slider-paginator');
+        const paginatorNextButton = paginator.querySelector('.js-paginator-next');
+        const paginatorPrevButton = paginator.querySelector('.js-paginator-prev');
+        let hidden = false;
+        let orderReversed = false;
+        let movingHeading = false;
         const blogSlider = new Swiper(blogSliderElement, {
             slidesPerView: 'auto',
             spaceBetween: 30,
+            navigation: {
+                nextEl: paginatorNextButton,
+                prevEl: paginatorPrevButton
+            },
             breakpoints: {
                 360: {
-                    spaceBetween: 20,
+                    spaceBetween: 20
                 }
             },
             on: {
@@ -21,23 +34,35 @@ export default function() {
             }
         });
 
-        const heading = document.querySelector('.js-blog-slider-heading');
-        const paginator = document.querySelector('.js-blog-slider-paginator');
-        let hidden = false;
-        let orderReversed = false;
-        let movingHeading = false;
+     
 
-        function nextSlide(event) {
-            event.preventDefault();
-            blogSlider.slideNext();
-        }
+        // function nextSlide(event) {
+        //     event.preventDefault();
+        //     blogSlider.slideNext();
+        // }
 
-        function prevSlide(event) {
-            event.preventDefault();
-            blogSlider.slidePrev();
-        }
+        // function prevSlide(event) {
+        //     event.preventDefault();
+        //     blogSlider.slidePrev();
+        // }
 
-        paginator.addEventListener('click', nextSlide);
+        // blogSlider.on('slidechange', checkPagination);
+
+        // function checkPagination() {
+        //     if (blogSlider.isBeginning) {
+        //         paginatorPrevButton.classList.add('hidden')
+        //     } else if (blogSlider.isEnd) {
+        //         paginatorNextButton.classList.add('hidden')
+        //     } else {
+        //         paginatorNextButton.classList.remove('hidden')
+        //         paginatorPrevButton.classList.remove('hidden')
+        //     }
+        // }
+
+        // checkPagination();
+
+        // paginatorNextButton.addEventListener('click', nextSlide);
+        // paginatorPrevButton.addEventListener('click', prevSlide);
 
         blogSliderElement.addEventListener('mouseenter', function() {
             paginator.classList.add('shown');
@@ -97,23 +122,23 @@ export default function() {
             blogSlider.off('slideChange', headingSlideChangeHandler);
         }
 
-        blogSlider.on('reachBeginning', function() {
-            if (orderReversed) {
-                paginator.removeEventListener('click', prevSlide);
-                paginator.addEventListener('click', nextSlide);
-                paginator.classList.remove('blog-slider__paginator--reversed');
-                orderReversed = false;
-            }
-        });
+        // blogSlider.on('reachBeginning', function() {
+        //     if (orderReversed) {
+        //         paginator.removeEventListener('click', prevSlide);
+        //         paginator.addEventListener('click', nextSlide);
+        //         paginator.classList.remove('blog-slider__paginator--reversed');
+        //         orderReversed = false;
+        //     }
+        // });
 
-        blogSlider.on('reachEnd', function() {
-            if (!orderReversed) {
-                paginator.addEventListener('click', prevSlide);
-                paginator.removeEventListener('click', nextSlide);
-                paginator.classList.add('blog-slider__paginator--reversed');
-                orderReversed = true;
-            }
-        });
+        // blogSlider.on('reachEnd', function() {
+        //     if (!orderReversed) {
+        //         paginator.addEventListener('click', prevSlide);
+        //         paginator.removeEventListener('click', nextSlide);
+        //         paginator.classList.add('blog-slider__paginator--reversed');
+        //         orderReversed = true;
+        //     }
+        // });
 
         if (matchMedia) {
             const mq = window.matchMedia('(max-width: 768px)');
