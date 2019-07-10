@@ -32,6 +32,7 @@
 .page-header__since-2007 {
     display: flex;
     align-items: center;
+    
 }
 
 
@@ -40,6 +41,9 @@
     font-size: 18px;
     line-height: 24px;
     margin: 0;
+    .page-header--black & {
+        color: black;
+    }
     @include breakpoint(mobile) {
         display: none;
     }

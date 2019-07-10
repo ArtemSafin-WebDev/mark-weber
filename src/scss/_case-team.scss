@@ -7,12 +7,14 @@
     }
 }
 
-
 .case-team__text {
     font-size: 18px;
     line-height: 22px;
     flex-shrink: 0;
     margin-right: 15px;
+    @include breakpoint(mobile) {
+        margin-right: 0;
+    }
     &::after {
         content: '';
         width: 30px;
@@ -24,65 +26,75 @@
     }
 }
 
-
-.case-team__list {
-    width: 50%;
-    flex-grow: 1;
-    display: flex;
-    flex-wrap: wrap;
-    margin: -25px -25px;
-    @include breakpoint(small-tablet) {
-        width: 100%;
-        margin-top: 30px;
-        
-    }
-}
-
-.case-team__list-item {
-    padding: 25px 25px;
-    @include breakpoint(mobile) {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-
-.case-team__image-container {
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-
-.case-team__image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    @include objectFitCover();
-}
-
-
-.case-team__list-item {
-    text-align: center;
-}
-
-
-.case-team__position {
-    color: #7E7E7E;
-    font-size: 16px;
-    line-height: 27px;
-    margin-top: 15px;
-}
-
-.case-team__name {
-    font-size: 16px;
-    line-height: 20px;
+.case-team__wrapper {
     
 }
 
 
+.case-team__list {
+    
+    margin: -25px -25px;
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(small-tablet) {
+        margin-top: 25px;
+    }
+}
+
+.case-team__list-item {
+    width: 220px;
+   
+    padding: 25px;
+    @include breakpoint(mobile) {
+        width: 50%;
+    }
+}
+
+.case-team__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &:link,
+    &:visited {
+        color: black;
+    }
+}
+
+.case-team__image-container {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+
+.case-team__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+
+.case-team__person-status {
+    font-size: 16px;
+    line-height: 27px;
+    color: #7E7E7E;
+    text-align: center;
+    display: block;
+}
+
+
+.case-team__person-name {
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+    text-align: center;
+    display: block;
+}   
 

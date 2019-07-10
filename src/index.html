@@ -284,24 +284,26 @@
                                     <use xlink:href="#plane" />
                                 </svg>
                             </h2>
-                            <form action="/" method="POST" class="request__form">
-                                <div class="request__form-group">
-                                    <textarea name="task" id="task" class="request__textarea" placeholder="Опишите задачу"></textarea>
-                                </div>
-                                <div class="request__form-group">
-                                    <input id="name" type="text" class="request__form-input" name="name" placeholder="Ваше имя" required />
-                                </div>
-                                <div class="request__form-group">
-                                    <input id="phone" type="text" class="request__form-input js-phone-input" name="phone" placeholder="Ваш телефон" />
-                                </div>
-                                <button class="request__submit" type="submit">
-                                    <span class="request__submit-content">
-                                        Отправить<svg width="8" height="14" aria-hidden="true" class="icon-right-arrow">
-                                            <use xlink:href="#arrow-right" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </form>
+                            <div class="request__form-wrapper">
+                                <form action="/" method="POST" class="application" _lpchecked="1">
+                                    <div class="application__form-group">
+                                        <textarea name="task" id="task" class="application__textarea" placeholder="Опишите задачу"></textarea>
+                                    </div>
+                                    <div class="application__form-group">
+                                        <input id="name" type="text" class="application__form-input" name="name" placeholder="Ваше имя" required="" />
+                                    </div>
+                                    <div class="application__form-group">
+                                        <input id="phone" type="text" class="application__form-input js-phone-input" name="phone" placeholder="Ваш телефон" im-insert="true" />
+                                    </div>
+                                    <button class="application__submit" type="submit">
+                                        <span class="application__submit-content">
+                                            Отправить<svg width="8" height="14" aria-hidden="true" class="icon-right-arrow">
+                                                <use xlink:href="#arrow-right"></use>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

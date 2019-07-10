@@ -23,6 +23,11 @@
     padding-bottom: 130px;
     @include breakpoint(small-tablet) {
         flex-direction: column;
+        padding-bottom: 75px;
+    }
+    @include breakpoint(supersmall-mobile) {
+        padding-top: 40px;
+        padding-bottom: 60px;
     }
 }
 
@@ -40,6 +45,11 @@
     line-height: 26px;
     position: relative;
     display: inline-block;
+    @include breakpoint(supersmall-mobile) {
+        font-size: 18px;
+        line-height: 22px;
+
+    }
     &::before {
         content: '';
         width: 100%;
@@ -59,6 +69,10 @@
     font-size: 20px;
     line-height: 26px;
     margin-top: 30px;
+    @include breakpoint(supersmall-mobile) {
+        font-size: 16px;
+        line-height: 20px;
+    }
 }
 
 .case-details__features-list {
@@ -91,6 +105,9 @@
 .case-details__feature-description-left-column {
     padding-right: 60px;
     display: flex;
+    @include breakpoint(small-tablet) {
+        padding-right: 0;
+    }
     &::before {
         content: counter(item);
         font-size: 32px;
@@ -98,6 +115,9 @@
         color: $primary-saturated;
         font-weight: 700;
         margin-right: 60px;
+        @include breakpoint(mobile) {
+            margin-right: 30px;
+        }
     }
 }
 
@@ -107,6 +127,9 @@
     @include breakpoint(small-tablet) {
         border-left: none;
         margin-top: 30px;
+    }
+    @include breakpoint(small-mobile) {
+        flex-direction: column;
     }
 }
 
@@ -119,6 +142,10 @@
     @include breakpoint(small-tablet) {
         margin: 0;
         width: 100%;
+    }
+    @include breakpoint(small-mobile) {
+        font-size: 26px;
+        line-height: 32px;
     }
 }
 
@@ -147,6 +174,12 @@
         margin-left: 0;
         margin-right: 30px;
     }
+    @include breakpoint(small-mobile) {
+        margin: 0 auto;
+        margin-bottom: 30px;
+        width: 140px;
+        height: 140px;
+    }
 }
 
 .case-details__feature-description-author-image {
@@ -163,13 +196,10 @@
 
 
 .case-details__slide-image-container {
-    height: 565px;
-    @include breakpoint(desktop) {
-        height: 420px;
-    }
-    @include breakpoint(laptop) {
-        height: 350px;
-    }
+    // height: 565px;
+    width: 100%;
+    padding-bottom: 53.8%;
+    position: relative;
 }
 
 .case-details__slide-image {
@@ -177,6 +207,14 @@
     height: 100%;
     max-width: none;
     width: auto;
+
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @include objectFitCover();
 }
 
 .case-details__slide-description {
@@ -184,6 +222,7 @@
     line-height: 26px;
     color: black;
     margin-top: 20px;
+    
 }
 
 .case-details__image-slider {
@@ -209,9 +248,10 @@
     }
 
     .swiper-slide {
-        // width: 60%;
-        width: auto;
+        width: 66.7%;
+        // width: auto;
         height: auto;
+       
         display: flex;
         flex-direction: column;
         &:last-child {

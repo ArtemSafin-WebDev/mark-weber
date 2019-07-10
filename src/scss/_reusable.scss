@@ -1,0 +1,130 @@
+.back-btn {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 22px;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+
+    &--black {
+        &:link,
+        &:visited {
+            color: black;
+        }
+    }
+}
+
+.back-btn__icon {
+    width: 30px;
+    height: 30px;
+    background-color: $primary-medium;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border-radius: 50%;
+    position: relative;
+    bottom: 2px;
+    svg {
+        fill: black;
+    }
+}
+
+
+
+
+
+
+.application {
+    
+    
+    color: black;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.application__form-input,
+.application__textarea {
+    background-color: transparent;
+    -webkit-appearance: none;
+    border: none;
+
+    outline: none;
+    font: inherit;
+    font-family: $open-sans;
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 10px;
+    font-weight: 300;
+    @include placeholder {
+        font: inherit;
+        font-family: $open-sans;
+        font-size: 18px;
+        line-height: 24px;
+        color: black;
+        font-weight: 300;
+    }
+}
+
+.application__textarea {
+    resize: none;
+    border-radius: 0;
+    height: 86px;
+}
+
+.application__form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+    &:last-of-type {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+.application__label {
+    font-family: $open-sans;
+    font-size: 18px;
+    line-height: 24px;
+    color: black;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.application__submit {
+    margin-left: auto;
+    font: inherit;
+    margin-top: 18px;
+    @include breakpoint(supersmall-mobile) {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.application__submit-content {
+    display: flex;
+    align-items: center;
+    background-color: #242424;
+    color: white;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 21px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    min-width: 200px;
+    // @include breakpoint(supersmall-mobile) {
+    //     padding: 15px 25px;
+    // }
+    svg {
+        fill: #ffe383;
+        margin-left: auto;
+    }
+}

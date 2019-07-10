@@ -74,8 +74,8 @@ export default function() {
 
         function fixMenu() {
             const viewportOffset = menu.getBoundingClientRect();
-            const top = viewportOffset.top + window.scrollY;
-            const right = document.documentElement.clientWidth - viewportOffset.left - menu.offsetWidth;
+            const top = Math.trunc(viewportOffset.top + window.scrollY);
+            const right = Math.trunc(document.documentElement.clientWidth - viewportOffset.left - menu.offsetWidth);
             menu.style.position = 'fixed';
             menu.style.top = `${top}px`;
             menu.style.right = `${right}px`;

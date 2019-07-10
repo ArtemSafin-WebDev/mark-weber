@@ -19,13 +19,14 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 
 
 
 main .container > *:first-child {
     padding-top: 100px;
-    margin-top: 0;
+    // margin-top: 0;
 }
 
 
