@@ -126,12 +126,17 @@
 
             <main>
                 <div class="container">
-                    <div class="case-top-block">
-                        <span class="case-top-block__bg" style="background-image:url(img/header-bg-1.jpg)"> </span>
+                    <div class="case-top-block js-case-top-block">
+                        <div class="case-top-block__video js-top-block-video-container">
+                            <video loop preload="none" poster="img/header-bg-1.jpg">
+                                <source src="misc/keyboard-typing.mp4" type="video/mp4" />
+                            </video>
+                            <span class="case-top-block__video-overlay" style="background-color: rgba(0, 0, 0, 0.7)"> </span>
+                        </div>
                         <div class="case-top-block__content">
                             <div class="case-top-block__content-left-column">
-                                <a href="#" class="case-top-block__back-btn">
-                                    <span class="case-top-block__back-btn-icon">
+                                <a href="#" class="back-btn">
+                                    <span class="back-btn__icon">
                                         <svg width="5" height="10" aria-hidden="true" class="icon-arrow-left">
                                             <use xlink:href="#arrow-left" />
                                         </svg> </span
@@ -142,7 +147,7 @@
                                 <h2 class="case-top-block__heading">
                                     Сайт компании «БАРС Групп»
                                 </h2>
-                                <a href="#" class="case-top-block__video-link">
+                                <a href="#" class="case-top-block__video-link js-case-top-block-video-link">
                                     <svg width="85" height="85" aria-hidden="true" class="icon-play">
                                         <use xlink:href="#play" />
                                     </svg>
@@ -265,130 +270,155 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="case-video">
-                        <a href="#" class="case-video__link">
-                            <img src="img/video-preview.jpg" alt="" class="case-video__link-image" />
-                            <svg width="85" height="85" aria-hidden="true" class="icon-play-bold">
-                                <use xlink:href="#play-bold" />
-                            </svg>
-                        </a>
+                    <div class="case-video js-case-video">
+                        <div class="case-video__wrapper">
+                            <a href="https://www.youtube.com/watch?v=RdN_cij4ciY" class="case-video__link js-case-video-link">
+                                <img src="img/video-preview.jpg" alt="" class="case-video__link-image" />
+                                <span class="case-video__link-bg" style="background-color: rgba(0, 0, 0, 0.1)"></span>
+                                <svg width="85" height="85" aria-hidden="true" class="icon-play-bold">
+                                    <use xlink:href="#play-bold" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div class="case-team">
                         <span class="case-team__text">
                             Команда проекта
                         </span>
-                        <ul class="case-team__list">
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                            <li class="case-team__list-item">
-                                <div class="case-team__image-container">
-                                    <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
-                                </div>
-                                <p class="case-team__position">
-                                    Арт-директор
-                                </p>
-                                <p class="case-team__name">
-                                    Рустем Биктагиров
-                                </p>
-                            </li>
-                        </ul>
+                        <div class="case-team__wrapper">
+                            <ul class="case-team__list">
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="case-team__list-item">
+                                    <a href="#" class="case-team__card">
+                                        <span class="case-team__image-container">
+                                            <img src="img/team-member.png" alt="Член команды" class="case-team__image" />
+                                        </span>
+                                        <span class="case-team__person-status">
+                                            Арт-директор
+                                        </span>
+                                        <span class="case-team__person-name">
+                                            Рустем Биктагиров
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="portfolio">
                         <ul class="portfolio__list">
@@ -396,6 +426,7 @@
                                 <a href="#" class="portfolio__card">
                                     <span class="portfolio__bg">
                                         <span class="portfolio__bg-content" style="background-image:url(img/8129278987be7c55998df7d6f9d37bfa.jpg)"> </span>
+                                        <span class="portfolio__bg-overlay" style="background-color: rgba(0, 0, 0, 0.2)"> </span>
                                     </span>
                                     <span class="portfolio__project-image">
                                         <img src="img/e7bec7fa15877fe9e583332efa843051.png" alt="neon-art" />
