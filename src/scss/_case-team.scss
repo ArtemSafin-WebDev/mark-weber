@@ -5,6 +5,9 @@
     @include breakpoint(small-tablet) {
         flex-direction: column;
     }
+    @include breakpoint(supersmall-mobile) {
+        padding-top: 50px;
+    }
 }
 
 .case-team__text {
@@ -27,26 +30,46 @@
 }
 
 .case-team__wrapper {
-    
+    width: 50%;
+    flex-grow: 1;
+    @include breakpoint(small-tablet) {
+        width: 100%;
+        flex-grow: 0;
+    }
 }
 
 
 .case-team__list {
     
-    margin: -25px -25px;
+    margin: -28px -28px;
     display: flex;
     flex-wrap: wrap;
     @include breakpoint(small-tablet) {
-        margin-top: 25px;
+        margin-top: 28px;
+    }
+    @include breakpoint(small-mobile) {
+        margin: -15px -15px;
+        margin-top: 15px;
+        margin-top: 30px;
     }
 }
 
 .case-team__list-item {
     width: 220px;
-   
-    padding: 25px;
+    width: 16.66%;
+    padding: 28px;
+    @include breakpoint(laptop) {
+        width: 20%;
+    }
+    @include breakpoint(tablet) {
+        width: 25%;
+    }
     @include breakpoint(mobile) {
+        width: 33.33%;
+    }
+    @include breakpoint(small-mobile) {
         width: 50%;
+        padding: 15px;
     }
 }
 

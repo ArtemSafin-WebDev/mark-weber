@@ -131,11 +131,26 @@ export default function() {
         const videoSlides = Array.from(document.querySelectorAll('.js-services-video-slide'));
         let activeVideoSlide = null;
 
+        const playActiveVideo = element => {
+            const video = element.querySelector('video');
+            if (video.hasAttribute('autoplay') && video.hasAttribute('playsinline')) {
+                return;
+            } else {
+                video.setAttribute('autoplay', true);
+                video.setAttribute('playsinline', true);
+                video.addEventListener('play', function() {
+                    this.classList.add('playing');
+                })
+                video.load();
+            }
+        };
+
         const setActiveVideoSlides = index => {
             if (!activeVideoSlide) {
                 videoSlides.forEach((slide, slideIndex) => {
                     if (slideIndex === index) {
                         slide.classList.add('active');
+                        playActiveVideo(slide);
                     } else {
                         slide.classList.remove('active');
                     }
@@ -146,6 +161,7 @@ export default function() {
                 previousVideoSlide.classList.remove('active');
                 newVideoSlide.classList.add('active');
                 activeVideoSlide = newVideoSlide;
+                playActiveVideo(slide);
             }
         };
 

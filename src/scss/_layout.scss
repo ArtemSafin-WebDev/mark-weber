@@ -24,9 +24,37 @@
 
 
 
+.two-column-layout-container {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+
+}
+
+
+.two-column-layout-left-column {
+     width: 178px;
+    flex-shrink: 0;
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.two-column-layout-right-column {
+    width: 50%;
+    flex-grow: 1;
+    @include breakpoint(mobile) {
+        width: 100%;
+        
+    }
+}
+
+
+
 main .container > *:first-child {
     padding-top: 100px;
-    // margin-top: 0;
+    
 }
 
 

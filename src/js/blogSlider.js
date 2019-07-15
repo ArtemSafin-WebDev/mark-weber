@@ -34,36 +34,6 @@ export default function() {
             }
         });
 
-     
-
-        // function nextSlide(event) {
-        //     event.preventDefault();
-        //     blogSlider.slideNext();
-        // }
-
-        // function prevSlide(event) {
-        //     event.preventDefault();
-        //     blogSlider.slidePrev();
-        // }
-
-        // blogSlider.on('slidechange', checkPagination);
-
-        // function checkPagination() {
-        //     if (blogSlider.isBeginning) {
-        //         paginatorPrevButton.classList.add('hidden')
-        //     } else if (blogSlider.isEnd) {
-        //         paginatorNextButton.classList.add('hidden')
-        //     } else {
-        //         paginatorNextButton.classList.remove('hidden')
-        //         paginatorPrevButton.classList.remove('hidden')
-        //     }
-        // }
-
-        // checkPagination();
-
-        // paginatorNextButton.addEventListener('click', nextSlide);
-        // paginatorPrevButton.addEventListener('click', prevSlide);
-
         blogSliderElement.addEventListener('mouseenter', function() {
             paginator.classList.add('shown');
         });
@@ -121,24 +91,6 @@ export default function() {
             blogSlider.off('touchEnd', headingTouchEndHandler);
             blogSlider.off('slideChange', headingSlideChangeHandler);
         }
-
-        // blogSlider.on('reachBeginning', function() {
-        //     if (orderReversed) {
-        //         paginator.removeEventListener('click', prevSlide);
-        //         paginator.addEventListener('click', nextSlide);
-        //         paginator.classList.remove('blog-slider__paginator--reversed');
-        //         orderReversed = false;
-        //     }
-        // });
-
-        // blogSlider.on('reachEnd', function() {
-        //     if (!orderReversed) {
-        //         paginator.addEventListener('click', prevSlide);
-        //         paginator.removeEventListener('click', nextSlide);
-        //         paginator.classList.add('blog-slider__paginator--reversed');
-        //         orderReversed = true;
-        //     }
-        // });
 
         if (matchMedia) {
             const mq = window.matchMedia('(max-width: 768px)');

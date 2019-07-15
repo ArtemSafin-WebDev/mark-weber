@@ -19,9 +19,7 @@ body {
     flex-direction: column;
     font-family: $proxima;
     color: black;
-    .touch & {
-        cursor: pointer;
-    }
+   
 }
 
 ul {

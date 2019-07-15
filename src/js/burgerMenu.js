@@ -12,7 +12,7 @@ export default function() {
         const burger = document.querySelector('.js-burger');
         const content = document.querySelector('.js-menu-content');
         const submenuLinks = Array.from(document.querySelectorAll('.js-submenu-trigger'));
-        const menuClose = document.querySelector('.js-menu-close-btn');
+       
         let menuShown = false;
         let menuFixed = false;
         let scrollBlocked = false;
@@ -22,7 +22,7 @@ export default function() {
 
         //// Функция обработки клика за пределами меню для его закрытия
 
-        function outsideClickHandler() {
+        function outsideClickHandler(event) {
             if (!menu.contains(event.target) && event.target !== menu) {
                 hideMenu();
             }

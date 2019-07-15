@@ -1,5 +1,6 @@
 .blog-slider {
     margin-top: 80px;
+    margin-bottom: 80px;
     position: relative;
     @include breakpoint(mobile) {
         margin-top: 38px;
@@ -9,7 +10,7 @@
 .blog-slider__wrapper {
     margin-right: calc(-1 * (100vw - 100%) / 2);
     margin-left: calc(-1 * (100vw - 100%) / 2);
-    margin-top: -22px;
+    // margin-top: -22px;
 
     @include breakpoint(large-desktop) {
         margin-left: -40px;
@@ -86,18 +87,23 @@
 .blog-slider__heading {
     font-size: 18px;
     line-height: 22px;
-
+    width: 175px;
     font-weight: 400;
     display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
     @include breakpoint(mobile) {
         margin-bottom: 35px;
+        position: static;
+        width: 100%;
     }
     &::after {
         content: '';
         width: 30px;
         height: 3px;
         background-color: #f7dd85;
-        margin-left: 10px;
+        margin-left: 5px;
         vertical-align: middle;
         display: inline-block;
     }

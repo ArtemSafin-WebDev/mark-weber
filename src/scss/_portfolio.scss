@@ -1,9 +1,13 @@
 .portfolio {
-    margin-top: 120px;
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
+    // @include breakpoint(mobile) {
+    //     margin-top: 82px;
+    // }
+
     @include breakpoint(mobile) {
-        margin-top: 82px;
+        margin-top: 38px;
     }
 }
 

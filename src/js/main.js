@@ -9,7 +9,8 @@ import blogSlider from './blogSlider';
 import inputMask from './inputMask';
 import burgerMenu from './burgerMenu';
 import caseSlider from './caseSlider';
-
+import caseTopBlockVideo from './caseTopBlockVideo';
+import inlineYoutubeVideo from './inlineYoutubeVideo';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Полифилл .contains для IE 11
@@ -26,9 +27,25 @@ document.addEventListener('DOMContentLoaded', function() {
     if (detectIt.hasTouch) {
         document.body.classList.remove('no-touch');
         document.body.classList.add('touch');
+
+        function appendStyle(styles) {
+            var css = document.createElement('style');
+            css.type = 'text/css';
+
+            if (css.styleSheet) css.styleSheet.cssText = styles;
+            else css.appendChild(document.createTextNode(styles));
+
+            document.getElementsByTagName('head')[0].appendChild(css);
+        }
+
+        var styles = '* {cursor: pointer; }';
+
+        window.onload = function() {
+            appendStyle(styles);
+        };
     }
 
-    // Слайдер услуг 
+    // Слайдер услуг
 
     // servicesSlider();
 
@@ -48,8 +65,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     inputMask();
 
-
     // Слайдер с изображениями проекта
 
     caseSlider();
+
+    // Видео в верхнем блоке кейсов
+
+    caseTopBlockVideo();
+
+    // Инлайновые видео с YT
+
+    inlineYoutubeVideo();
 });

@@ -82,6 +82,9 @@
 .case-details__features-list-item {
     counter-increment: item;
     margin-bottom: 120px;
+    @include breakpoint(supersmall-mobile) {
+        margin-bottom: 80px;
+    }
     &:last-child {
         margin-bottom: 0;
     }
@@ -153,6 +156,12 @@
     font-size: 20px;
     line-height: 26px;
     margin-bottom: 20px;
+   
+    @include breakpoint(supersmall-mobile) {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
 }
 
 .case-details__feature-description-author {
@@ -160,6 +169,10 @@
     color: #868686;
     font-size: 19px;
     line-height: 26px;
+    @include breakpoint(supersmall-mobile) {
+        font-size: 16px;
+        line-height: 20px;
+    }
 }
 
 .case-details__feature-description-author-image-container {
@@ -222,7 +235,11 @@
     line-height: 26px;
     color: black;
     margin-top: 20px;
-    
+    @include breakpoint(supersmall-mobile) {
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 10px;
+    }
 }
 
 .case-details__image-slider {
@@ -254,6 +271,9 @@
        
         display: flex;
         flex-direction: column;
+        @include breakpoint(small-mobile) {
+            width: 80%;
+        }
         &:last-child {
             margin-right: 30px !important;
             @include breakpoint(supersmall-mobile) {

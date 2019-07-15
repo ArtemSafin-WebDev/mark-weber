@@ -8,7 +8,12 @@ export default function() {
 
         const caseSlider = new Swiper(sliderContainer, {
             slidesPerView: 'auto',
-            spaceBetween: 30
+            spaceBetween: 30,
+            breakpoints: {
+                568: {
+                    spaceBetween: 20
+                }
+            }
         });
     });
 }

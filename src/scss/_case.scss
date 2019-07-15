@@ -17,6 +17,8 @@
         padding-top: 100px;
         padding-bottom: 100px;
         flex-grow: 1;
+        position: relative;
+        z-index: 100;
         @include breakpoint(laptop) {
             flex-direction: column;
         }
@@ -121,6 +123,12 @@
     font-size: 20px;
     line-height: 26px;
     margin-top: auto;
+    transition: .3s;
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s, visibility 0s linear .3s;
+    }
 
     @include breakpoint(supersmall-mobile) {
         font-size: 18px;
@@ -142,6 +150,10 @@
         margin-right: 25px;
         opacity: 0.6;
         transition: opacity 0.2s;
+        @include breakpoint(mobile) {
+            width: 70px;
+            height: 70px;
+        }
         @include breakpoint(supersmall-mobile) {
             width: 50px;
             height: 50px;
@@ -150,11 +162,58 @@
     }
 }
 
-.case-details__image-section {
-}
 
 .case-details__single-image {
     display: block;
     width: 100%;
     height: auto;
+}
+
+
+
+
+.case-top-block__video {
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    top: 0;
+    
+    width: 100vw;
+    left: calc(-1*((100vw - 100%)/2));
+    
+    overflow: hidden;
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        &.playing {
+            animation-name: fadeIn;
+            animation-duration: .4s;
+            animation-timing-function: ease-out;
+        }
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.case-top-block__video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
 }
