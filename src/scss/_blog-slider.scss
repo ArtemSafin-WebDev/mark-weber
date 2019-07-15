@@ -10,8 +10,7 @@
 .blog-slider__wrapper {
     margin-right: calc(-1 * (100vw - 100%) / 2);
     margin-left: calc(-1 * (100vw - 100%) / 2);
-    // margin-top: -22px;
-
+    
     @include breakpoint(large-desktop) {
         margin-left: -40px;
         margin-right: -40px;
@@ -38,14 +37,15 @@
 
     .swiper-slide__wide {
         width: 452px;
-        .blog-slider__image-container {
-            background-color: #daebf7;
-            min-height: 226px;
-            transition: background-color 0.3s;
-            @include breakpoint(mobile) {
-                min-height: 250px;
-            }
+        
+        @include breakpoint(mobile) {
+            max-width: 90%;
         }
+    }
+
+
+    .swiper-slide__video {
+        width: 392px;
         @include breakpoint(mobile) {
             max-width: 90%;
         }
@@ -120,6 +120,58 @@
     .touch &:active {
         .blog-slider__small-image {
             transform: scale(1.05);
+        }
+
+
+        .blog-slider__image-container {
+            &::after {
+                opacity: 1;
+            }
+        }
+
+       
+    }
+
+
+    &--with-item {
+        .blog-slider__image-container {
+            background-color: #daebf7;
+            min-height: 226px;
+            transition: background-color 0.3s;
+            @include breakpoint(mobile) {
+                min-height: 250px;
+            }
+        }
+    }
+
+    &--with-video {
+        .blog-slider__image-container {
+            width: 100%;
+            min-height: 242px;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 40px;
+                height: 40px;
+                margin-left: -20px;
+                margin-top: -20px;
+                transition: opacity .2s;
+                background-image: url("data:image/svg+xml,%0A%3Csvg data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath d='M0 2.21v30.9a2 2 0 0 0 2 2 1.9 1.9 0 0 0 .88-.21l31.46-15.45a2 2 0 0 0 .92-2.67 2 2 0 0 0-.92-.92L2.88.41a2 2 0 0 0-2.68.92 2 2 0 0 0-.2.88z' fill='%23fff'/%3E%3C/svg%3E");
+                background-size: 100% auto;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: .8;
+            }
+        }
+
+
+        .blog-slider__image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            @include objectFitCover();
         }
     }
 }
@@ -247,4 +299,20 @@
        
         transition: opacity .2s, visibility 0s linear .2s;
     }
+}
+
+
+
+
+.blog-slider__video-description {
+    position: absolute;
+    
+    display: block;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 20px 22px;
 }

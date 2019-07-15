@@ -17,13 +17,14 @@ export default function() {
         let menuFixed = false;
         let scrollBlocked = false;
         let initiallyShown = !window.matchMedia('(max-width: 1200px)').matches && menu.classList.contains('js-initially-shown');
-
+        
         // Функции
 
         //// Функция обработки клика за пределами меню для его закрытия
 
         function outsideClickHandler(event) {
             if (!menu.contains(event.target) && event.target !== menu) {
+                
                 hideMenu();
             }
         }
@@ -50,6 +51,7 @@ export default function() {
                 burger.classList.add('active');
                 document.addEventListener('click', outsideClickHandler);
                 menuShown = true;
+                
                 if (window.matchMedia('(max-width: 768px)').matches && !scrollBlocked) {
                     disableBodyScroll(content);
                     scrollBlocked = true;
@@ -63,6 +65,7 @@ export default function() {
                 burger.classList.remove('active');
                 document.removeEventListener('click', outsideClickHandler);
                 menuShown = false;
+                
                 if (scrollBlocked) {
                     enableBodyScroll(content);
                     scrollBlocked = false;
@@ -179,7 +182,7 @@ export default function() {
 
         function WidthChange(mq) {
             if (!mq.matches) {
-                hideMenu();
+               
                 content.removeEventListener('click', closeBorders);
             } else {
                 content.addEventListener('click', closeBorders);

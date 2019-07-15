@@ -1,0 +1,44 @@
+.blog {
+    margin: -15px;
+    margin-top: 25px;
+    margin-bottom: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(mobile) {
+        margin-bottom: 80px;
+    }
+}
+
+
+.blog-item {
+    padding: 15px;
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(laptop) {
+        width: 50%;
+    }
+    @include breakpoint(small-tablet) {
+        width: 100%;
+    }
+    .blog-slider__card--with-item {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        .blog-slider__image-container {
+            flex-grow: 1;
+        }
+    }
+
+
+    .blog-slider__description-text {
+        margin-top: 20px;
+    }
+}
+
+
+.blog-card {
+    height: 300px;
+    width: 100%;
+    background-color: green;
+}

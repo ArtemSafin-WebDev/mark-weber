@@ -1,6 +1,6 @@
 export default function() {
     const inlineVideos = Array.from(document.querySelectorAll('.js-case-video'));
-
+    console.log('Модуль с видео подключен')
     inlineVideos.forEach(video => {
         const link = video.querySelector('.js-case-video-link')
         const wrapper = link.parentElement;

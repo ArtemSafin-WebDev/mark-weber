@@ -139,7 +139,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide swiper-slide__wide">
-                                        <a href="#" class="blog-slider__card">
+                                        <a href="#" class="blog-slider__card blog-slider__card--with-item">
                                             <span class="blog-slider__image-container">
                                                 <span class="blog-slider__small-image" style="background-image:url(img/type-3.png)"> </span>
                                                 <span class="blog-slider__image-annotation-block"
@@ -182,7 +182,7 @@
                                         </a>
                                     </div>
                                     <div class="swiper-slide swiper-slide__wide">
-                                        <a href="#" class="blog-slider__card">
+                                        <a href="#" class="blog-slider__card blog-slider__card--with-item">
                                             <span class="blog-slider__image-container">
                                                 <span class="blog-slider__small-image" style="background-image:url(img/type-3.png)"> </span>
                                                 <span class="blog-slider__image-annotation-block"
@@ -203,6 +203,19 @@
                                             <span class="blog-slider__description-text">
                                                 Странные чуваки из Сургута приехали в Марк Вебер
                                             </span>
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide swiper-slide__video">
+                                        <a href="#" class="blog-slider__card blog-slider__card--with-video">
+                                            <span class="blog-slider__image-container">
+                                                <img src="img/video-slide.jpg" alt="" class="blog-slider__image" />
+                                                <span class="blog-slider__image-annotation-block"><span class="blog-slider__image-annotation-label">Новая работа</span> </span>
+                                                <span class="blog-slider__video-description">
+                                                        Странные чуваки из Сургута приехали в Марк Вебер
+
+                                                </span>
+                                            </span>
+                                           
                                         </a>
                                     </div>
                                 </div>
@@ -227,6 +240,7 @@
                                 <a href="#" class="portfolio__card">
                                     <span class="portfolio__bg">
                                         <span class="portfolio__bg-content" style="background-image:url(img/8129278987be7c55998df7d6f9d37bfa.jpg)"> </span>
+                                        <span class="portfolio__bg-overlay" style="background-color: rgba(0, 0, 0, 0.2)"> </span>
                                     </span>
                                     <span class="portfolio__project-image">
                                         <img src="img/e7bec7fa15877fe9e583332efa843051.png" alt="neon-art" />
@@ -253,6 +267,7 @@
                                 <a href="#" class="portfolio__card">
                                     <span class="portfolio__bg">
                                         <span class="portfolio__bg-content" style="background-image:url(img/5462a039906dc792e0f89ea74479183a.jpg)"> </span>
+                                        <span class="portfolio__bg-overlay" style="background-color: rgba(0, 0, 0, 0.2)"> </span>
                                     </span>
 
                                     <span class="portfolio__project-type">
@@ -289,7 +304,7 @@
                                 </svg>
                             </h2>
                             <div class="request__form-wrapper">
-                                <form action="/" method="POST" class="application" _lpchecked="1">
+                                <form action="/" method="POST" class="application" _lpchecked="1" data-parsley-validate>
                                     <div class="application__form-group">
                                         <textarea name="task" id="task" class="application__textarea" placeholder="Опишите задачу"></textarea>
                                     </div>
@@ -297,7 +312,7 @@
                                         <input id="name" type="text" class="application__form-input" name="name" placeholder="Ваше имя" required="" />
                                     </div>
                                     <div class="application__form-group">
-                                        <input id="phone" type="text" class="application__form-input js-phone-input" name="phone" placeholder="Ваш телефон" im-insert="true" />
+                                        <input id="phone" type="text" class="application__form-input js-phone-input" name="phone" placeholder="Ваш телефон" im-insert="true" data-parsley-phone required/>
                                     </div>
                                     <button class="application__submit" type="submit">
                                         <span class="application__submit-content">

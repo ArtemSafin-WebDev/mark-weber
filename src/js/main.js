@@ -11,6 +11,7 @@ import burgerMenu from './burgerMenu';
 import caseSlider from './caseSlider';
 import caseTopBlockVideo from './caseTopBlockVideo';
 import inlineYoutubeVideo from './inlineYoutubeVideo';
+import formValidation from './formValidation';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Полифилл .contains для IE 11
@@ -76,4 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Инлайновые видео с YT
 
     inlineYoutubeVideo();
+
+    // Валидация форм
+
+    formValidation();
 });

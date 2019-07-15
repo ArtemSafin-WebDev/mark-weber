@@ -11,7 +11,7 @@
         <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;"><!-- partial:img/symbol/sprite.svg --><!-- partial --></div>
 
         <div class="page-content">
-            <!-- partial:partials/_header-black.html --><!-- partial -->
+            <!-- partial:partials/_header-black-no-initial-menu.html --><!-- partial -->
             <main>
                 <div class="container">
                     <div class="contacts">
@@ -82,7 +82,7 @@
                                         <h3 class="contacts-application__heading">
                                             Заявка на проект
                                         </h3>
-                                        <form action="/" method="POST" class="application" _lpchecked="1">
+                                        <form action="/" method="POST" class="application" _lpchecked="1" data-parsley-validate>
                                             <div class="application__form-group">
                                                 <textarea name="task" id="task" class="application__textarea" placeholder="Опишите задачу"></textarea>
                                             </div>
@@ -90,7 +90,7 @@
                                                 <input id="name" type="text" class="application__form-input" name="name" placeholder="Ваше имя" required="" />
                                             </div>
                                             <div class="application__form-group">
-                                                <input id="phone" type="text" class="application__form-input js-phone-input" name="phone" placeholder="Ваш телефон" im-insert="true" />
+                                                <input id="phone" type="text" class="application__form-input js-phone-input" name="phone" placeholder="Ваш телефон" im-insert="true" data-parsley-phone required/>
                                             </div>
                                             <button class="application__submit" type="submit">
                                                 <span class="application__submit-content">
