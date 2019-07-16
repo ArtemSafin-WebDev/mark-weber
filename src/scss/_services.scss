@@ -102,21 +102,7 @@
     }
 }
 
-// .services__navigation-description-wrapper {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//     padding-bottom: 30px;
-// }
 
-// .services__navigation-description {
-//     position: relative;
-//     width: 452px;
-//     margin-left: 50px;
-//     min-height: 100px;
-// }
 
 @keyframes textFadeInLeft {
     from {
@@ -161,12 +147,14 @@
             width: 100%;
             height: 20px;
             display: block;
+            border-top: 1px solid rgba(white, .4);
         }
         &::after {
             content: '';
             width: 100%;
             height: 40px;
             display: block;
+            
         }
     }
     @include breakpoint(supersmall-mobile) {
