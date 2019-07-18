@@ -1811,17 +1811,13 @@ main .container > *:first-child {
   -webkit-tap-highlight-color: transparent; }
   .portfolio__card:link, .portfolio__card:visited {
     color: black; }
-  .no-touch .portfolio__card:hover .portfolio__bg-content,
-  .touch .portfolio__card:active .portfolio__bg-content {
+  .portfolio__card:hover .portfolio__bg-content {
     transform: translateZ(0) scale(1); }
-  .no-touch .portfolio__card:hover .portfolio__bg-overlay,
-  .touch .portfolio__card:active .portfolio__bg-overlay {
+  .portfolio__card:hover .portfolio__bg-overlay {
     opacity: 1; }
-  .no-touch .portfolio__card:hover .portfolio__project-image img,
-  .touch .portfolio__card:active .portfolio__project-image img {
+  .portfolio__card:hover .portfolio__project-image img {
     transform: translateZ(0) scale(1.05); }
-  .no-touch .portfolio__card:hover .portfolio__project-btn-content,
-  .touch .portfolio__card:active .portfolio__project-btn-content {
+  .portfolio__card:hover .portfolio__project-btn-content {
     transform: translateZ(0) translateX(0%);
     margin-left: 0; }
 
