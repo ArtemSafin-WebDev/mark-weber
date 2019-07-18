@@ -1482,10 +1482,12 @@ main .container > *:first-child {
   height: 156px;
   bottom: 18px;
   right: 18px;
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  transition: transform 0.3s ease-out; }
+  background-size: contain;
+  transition: transform 0.3s ease-out;
+  width: 50%;
+  width: 50%; }
   @media only screen and (max-width: 768px) {
     .blog-slider__small-image {
       width: 204px;
@@ -2846,14 +2848,6 @@ main .container > *:first-child {
   @media only screen and (max-width: 968px) {
     .blog-item {
       width: 100%; } }
-  .blog-item .blog-slider__card--with-item {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column; }
-    .blog-item .blog-slider__card--with-item .blog-slider__image-container {
-      flex-grow: 1; }
-  .blog-item .blog-slider__description-text {
-    margin-top: 20px; }
 
 .blog-card {
   height: 300px;
