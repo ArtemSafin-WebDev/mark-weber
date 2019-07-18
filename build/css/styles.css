@@ -1518,7 +1518,8 @@ main .container > *:first-child {
 
 .blog-slider__card {
   display: block;
-  width: 100%; }
+  width: 100%;
+  box-sizing: border-box; }
   .blog-slider__card:link, .blog-slider__card:visited {
     color: black; }
   .no-touch .blog-slider__card:hover .blog-slider__small-image,
@@ -1530,7 +1531,8 @@ main .container > *:first-child {
   .blog-slider__card--with-item .blog-slider__image-container {
     background-color: #daebf7;
     min-height: 226px;
-    transition: background-color 0.3s; }
+    transition: background-color 0.3s;
+    padding: 18px; }
     @media only screen and (max-width: 768px) {
       .blog-slider__card--with-item .blog-slider__image-container {
         min-height: 250px; } }
@@ -1608,8 +1610,10 @@ main .container > *:first-child {
 .blog-slider__image-annotation-details {
   font-size: 18px;
   line-height: 21px;
-  margin-top: 18px;
-  width: 242px; }
+  margin-top: 35px;
+  margin-bottom: 40px;
+  width: 242px;
+  display: block; }
 
 .blog-slider__paginator-buttons {
   opacity: 0;
