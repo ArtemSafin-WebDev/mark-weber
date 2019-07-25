@@ -10,6 +10,11 @@
 }
 
 .blog-details__content {
+    > *:not(img):not(video) {
+        max-width: 850px;
+    }
+
+
     h1 {
         font-size: 32px;
         line-height: 45px;
@@ -64,9 +69,5 @@
             margin-top: 20px;
             margin-bottom: 40px;
         }
-        // @include breakpoint(supersmall-mobile) {
-        //     margin-top: 20px;
-        //     margin-bottom: 40px;
-        // }
     }
 }
