@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet" />
 
         <link rel="stylesheet" href="css/styles.min.css" />
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=d41198b4-79cf-4ff2-83a6-aaff2a77a15c&lang=ru_RU" type="text/javascript"></script>
 
         <title>
             Mark Weber
@@ -14,7 +15,8 @@
     </head>
     <body class="no-touch" ontouchstart="">
         <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
-            <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+            ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <symbol viewBox="0 0 6 10" id="arrow-left" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 1.17L4.86 0 0 5l4.86 5L6 8.83 2.27 5 6 1.17z" /></symbol>
                 <symbol viewBox="0 0 6 10" id="arrow-right" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M0 1.17L1.14 0 6 5l-4.86 5L0 8.83 3.73 5 0 1.17z" /></symbol>
                 <symbol viewBox="0 0 10 16" id="location" xmlns="http://www.w3.org/2000/svg">
@@ -29,6 +31,7 @@
                         d="M12.2 0H1.64A1.58 1.58 0 0 0 0 1.5v7A1.58 1.58 0 0 0 1.64 10H12.2a1.57 1.57 0 0 0 1.64-1.5v-7A1.57 1.57 0 0 0 12.2 0zm-.63 1.32L6.92 5.07 2.28 1.32zm.88 7.18c0 .09-.12.18-.25.18H1.64c-.13 0-.25-.09-.25-.18V2.43l4.78 3.83a.55.55 0 0 0 .35.12h.81a.57.57 0 0 0 .35-.12l4.77-3.83z"
                     />
                 </symbol>
+                <symbol viewBox="0 0 298.667 298.667" id="pause" xmlns="http://www.w3.org/2000/svg"><path d="M192 0h85.333v298.667H192zM21.333 0h85.333v298.667H21.333z" /></symbol>
                 <symbol viewBox="0 0 13 13" id="phone" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M12.65 9.8L10 8.24a.68.68 0 0 0-.37-.09.89.89 0 0 0-.63.22l-.78.8a.19.19 0 0 1-.09.05h-.27A2.5 2.5 0 0 1 7.4 9a7.33 7.33 0 0 1-.81-.52 9.52 9.52 0 0 1-1.1-1 9.3 9.3 0 0 1-1-1.1A5.64 5.64 0 0 1 4 5.6a2.37 2.37 0 0 1-.25-.66.58.58 0 0 1 0-.1.19.19 0 0 1 .05-.09l.67-.67a.91.91 0 0 0 .24-.44.74.74 0 0 0-.07-.49L3.2.36A1.2 1.2 0 0 0 3 .1a.51.51 0 0 0-.36-.1.61.61 0 0 0-.44.19L.37 2a1 1 0 0 0-.23.33 1.17 1.17 0 0 0-.14.41V3a3.15 3.15 0 0 0 .06.68 6.19 6.19 0 0 0 .26 1A8.48 8.48 0 0 0 .9 6.07a11.57 11.57 0 0 0 1 1.6 15.4 15.4 0 0 0 1.61 1.82 14.22 14.22 0 0 0 2.29 1.93 11.81 11.81 0 0 0 1.92 1.05 6.58 6.58 0 0 0 1.43.44A6.31 6.31 0 0 0 10 13h.27a1.37 1.37 0 0 0 .39-.13 1 1 0 0 0 .32-.23l1.83-1.82a.61.61 0 0 0 .19-.55.69.69 0 0 0-.35-.47z"
@@ -41,10 +44,7 @@
                         fill-rule="evenodd"
                     />
                 </symbol>
-                <symbol viewBox="0 0 86 86" id="play" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M43 0a43 43 0 1 0 43 43A43 43 0 0 0 43 0zm0 85a42 42 0 1 1 42-42 42 42 0 0 1-42 42z" />
-                    <path d="M37 53l18-9.5L37 34v19z" />
-                </symbol>
+                <symbol viewBox="0 0 357 357" id="play" xmlns="http://www.w3.org/2000/svg"><path d="M38.25 0v357l280.5-178.5z" /></symbol>
                 <symbol viewBox="0 0 86 86" id="play-bold" xmlns="http://www.w3.org/2000/svg">
                     <path d="M43 86a43 43 0 1 1 43-43 43 43 0 0 1-43 43zm0-83a40 40 0 1 0 40 40A40 40 0 0 0 43 3z" />
                     <path d="M36.99 34v19l18-9.5-18-9.5z" />
@@ -55,9 +55,9 @@
         <div class="page-content">
             <header class="page-header page-header--black">
                 <div class="container container--flex container--align-items-center">
-                    <div class="page-header__logo">
+                    <a href="index.html" class="page-header__logo">
                         <img class="page-header__logo-image" src="img/mark-weber-logo-black.png" alt="Логотип Марк Вебер" width="128" />
-                    </div>
+                    </a>
                     <div class="page-header__since-2007">
                         <img src="img/since_2007_black.svg" alt="С 2007 года создаем сайты корпораций" class="page-header__since-2007-image" width="60" />
                         <p class="page-header__since-2007-text">
@@ -137,7 +137,11 @@
                                 <li class="portfolio__list-item">
                                     <a href="#" class="portfolio__card">
                                         <span class="portfolio__bg">
-                                            <span class="portfolio__bg-content" style="background-image:url(img/8129278987be7c55998df7d6f9d37bfa.jpg)"> </span>
+                                            <picture>
+                                                <source srcset="img/df918526e9a4e8ad41d387836b94f598.jpg" media="(max-width: 768px)" />
+                                                <img src="img/8129278987be7c55998df7d6f9d37bfa.jpg" alt="MDN" class="portfolio__bg-content" />
+                                            </picture>
+
                                             <span class="portfolio__bg-overlay" style="background-color: rgba(0, 0, 0, 0.2)"> </span>
                                         </span>
                                         <span class="portfolio__project-image">
@@ -164,10 +168,12 @@
                                 <li class="portfolio__list-item">
                                     <a href="#" class="portfolio__card">
                                         <span class="portfolio__bg">
-                                            <span class="portfolio__bg-content" style="background-image:url(img/5462a039906dc792e0f89ea74479183a.jpg)"> </span>
+                                            <picture>
+                                                <source srcset="img/508dfc4c295593157fd57e28f3bde863.jpg" media="(max-width: 768px)" />
+                                                <img src="img/5462a039906dc792e0f89ea74479183a.jpg" alt="MDN" class="portfolio__bg-content" />
+                                            </picture>
                                             <span class="portfolio__bg-overlay" style="background-color: rgba(0, 0, 0, 0.2)"> </span>
                                         </span>
-
                                         <span class="portfolio__project-type">
                                             Сайт
                                         </span>
@@ -189,7 +195,11 @@
                                 <li class="portfolio__list-item">
                                     <a href="#" class="portfolio__card">
                                         <span class="portfolio__bg">
-                                            <span class="portfolio__bg-content" style="background-image:url(img/8129278987be7c55998df7d6f9d37bfa.jpg)"> </span>
+                                            <picture>
+                                                <source srcset="img/df918526e9a4e8ad41d387836b94f598.jpg" media="(max-width: 768px)" />
+                                                <img src="img/8129278987be7c55998df7d6f9d37bfa.jpg" alt="MDN" class="portfolio__bg-content" />
+                                            </picture>
+
                                             <span class="portfolio__bg-overlay" style="background-color: rgba(0, 0, 0, 0.2)"> </span>
                                         </span>
                                         <span class="portfolio__project-image">
@@ -216,10 +226,12 @@
                                 <li class="portfolio__list-item">
                                     <a href="#" class="portfolio__card">
                                         <span class="portfolio__bg">
-                                            <span class="portfolio__bg-content" style="background-image:url(img/5462a039906dc792e0f89ea74479183a.jpg)"> </span>
+                                            <picture>
+                                                <source srcset="img/508dfc4c295593157fd57e28f3bde863.jpg" media="(max-width: 768px)" />
+                                                <img src="img/5462a039906dc792e0f89ea74479183a.jpg" alt="MDN" class="portfolio__bg-content" />
+                                            </picture>
                                             <span class="portfolio__bg-overlay" style="background-color: rgba(0, 0, 0, 0.2)"> </span>
                                         </span>
-
                                         <span class="portfolio__project-type">
                                             Сайт
                                         </span>
