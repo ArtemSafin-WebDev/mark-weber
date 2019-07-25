@@ -12,6 +12,7 @@ import caseSlider from './caseSlider';
 import caseTopBlockVideo from './caseTopBlockVideo';
 import inlineYoutubeVideo from './inlineYoutubeVideo';
 import formValidation from './formValidation';
+import map from './map';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Полифилл .contains для IE 11
@@ -81,4 +82,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Валидация форм
 
     formValidation();
+
+    // Карта
+
+    map()
 });

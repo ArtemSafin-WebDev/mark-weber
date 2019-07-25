@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic" rel="stylesheet" />
 
         <link rel="stylesheet" href="css/styles.min.css" />
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=d41198b4-79cf-4ff2-83a6-aaff2a77a15c&lang=ru_RU" type="text/javascript"></script>
 
         <title>
             Mark Weber
@@ -55,9 +56,9 @@
         <div class="page-content">
             <header class="page-header page-header--black">
                 <div class="container container--flex container--align-items-center">
-                    <div class="page-header__logo">
+                    <a href="index.html" class="page-header__logo">
                         <img class="page-header__logo-image" src="img/mark-weber-logo-black.png" alt="Логотип Марк Вебер" width="128" />
-                    </div>
+                    </a>
                     <div class="page-header__since-2007">
                         <img src="img/since_2007_black.svg" alt="С 2007 года создаем сайты корпораций" class="page-header__since-2007-image" width="60" />
                         <p class="page-header__since-2007-text">
@@ -133,12 +134,17 @@
                                         </svg> </span
                                     >Назад
                                 </a>
+                                <span class="text-with-bar contacts__small-heading">
+                                    Связаться
+                                </span>
                             </div>
                             <div class="two-column-layout-right-column">
-                                <h2 class="contacts__heading">
+                                <h1 class="contacts__heading">
                                     Контакты
-                                </h2>
-                                <img src="img/contacts-image.jpg" alt="Контакты - Изображение" class="contacts__image" />
+                                </h1>
+                                <div class="contacts__map-wrapper">
+                                    <div class="contacts__map-element" data-center="55.79623028, 49.13851495" id="map"></div>
+                                </div>
                                 <div class="contacts__info">
                                     <div class="contacts__info-item">
                                         <h4 class="contacts__info-heading">

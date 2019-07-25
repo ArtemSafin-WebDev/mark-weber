@@ -142,19 +142,19 @@
         display: block;
         overflow: hidden;
         height: 0;
+       
         &::before {
             content: '';
             width: 100%;
-            height: 20px;
+            height: 13px;
             display: block;
-            border-top: 1px solid rgba(white, .4);
+            
         }
         &::after {
             content: '';
             width: 100%;
             height: 40px;
             display: block;
-            
         }
     }
     @include breakpoint(supersmall-mobile) {
@@ -218,6 +218,13 @@
 
 .services__navigation-list {
     list-style: none;
+    // &-item {
+    //     &:last-child {
+    //         .services__navigation-link {
+    //             border-bottom: none;
+    //         }
+    //     }
+    //  }
 }
 
 .services__navigation-link {
@@ -229,6 +236,11 @@
     outline: none;
     user-select: none;
     @include noHighlight();
+    @include breakpoint(mobile) {
+        padding-bottom: 4px;
+        display: block;
+        border-bottom: 1px solid rgba(white, .3);
+    }
     @include breakpoint(supersmall-mobile) {
         font-size: 22px;
         line-height: 40px;
