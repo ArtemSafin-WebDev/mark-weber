@@ -142,11 +142,12 @@
         display: block;
         overflow: hidden;
         height: 0;
-       
+        font-size: 18px;
+        line-height: 21px;
         &::before {
             content: '';
             width: 100%;
-            height: 13px;
+            height: 2px;
             display: block;
             
         }
@@ -218,13 +219,13 @@
 
 .services__navigation-list {
     list-style: none;
-    // &-item {
-    //     &:last-child {
-    //         .services__navigation-link {
-    //             border-bottom: none;
-    //         }
-    //     }
-    //  }
+    &-item {
+        &:first-child {
+            .services__navigation-link {
+                border-top: none;
+            }
+        }
+     }
 }
 
 .services__navigation-link {
@@ -235,11 +236,23 @@
     white-space: nowrap;
     outline: none;
     user-select: none;
+    .services__expand-icon {
+        display: none;
+        fill: white;
+        margin-left: auto;
+        transition: transform .3s;
+    }
     @include noHighlight();
     @include breakpoint(mobile) {
+        padding-top: 4px;
         padding-bottom: 4px;
         display: block;
-        border-bottom: 1px solid rgba(white, .3);
+        border-top: 1px solid rgba(white, .3);
+        display: flex;
+        align-items: center;
+        .services__expand-icon {
+            display: block;
+        }
     }
     @include breakpoint(supersmall-mobile) {
         font-size: 22px;
@@ -255,6 +268,9 @@
         font-size: 32px;
         line-height: 53px;
         cursor: defult;
+        .services__expand-icon {
+            transform: rotate(180deg);
+        }
         @include breakpoint(supersmall-mobile) {
             font-size: 28px;
             line-height: 40px;

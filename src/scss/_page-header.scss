@@ -4,6 +4,9 @@
     left: 0;
     width: 100%;
     z-index: 100;
+    @include breakpoint(mobile) {
+        top: 20px;
+    }
 }
 
 .page-header__logo {
