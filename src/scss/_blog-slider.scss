@@ -17,11 +17,10 @@
     }
     @include breakpoint(mobile) {
         margin-top: 0;
-    }
-    @include breakpoint(supersmall-mobile) {
         margin-left: -20px;
         margin-right: -20px;
     }
+  
     .swiper-slide {
         width: 314px;
         &:last-child {
@@ -59,10 +58,6 @@
         }
 
         @include breakpoint(mobile) {
-            padding-left: 40px;
-        }
-
-        @include breakpoint(supersmall-mobile) {
             padding-left: 20px;
         }
     }
@@ -314,7 +309,6 @@
 
 .blog-slider__video-description {
     position: absolute;
-    
     display: block;
     bottom: 0;
     left: 0;
