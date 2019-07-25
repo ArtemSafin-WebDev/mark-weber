@@ -23,16 +23,32 @@ export default function() {
         checkWidthAndSetHeight();
     }
 
+
+    let playing = false;
+
+    function onPlay() {
+        this.classList.add('playing');
+        document.body.classList.add('case-video-playing');
+    }
+
     if (link && video) {
         link.addEventListener('click', event => {
             event.preventDefault();
-            video.setAttribute('autoplay', true);
-            video.setAttribute('playsinline', true);
-            video.addEventListener('play', function() {
-                this.classList.add('playing');
-                link.classList.add('hidden')
-            });
-            video.load();
+            if (!playing) {
+                video.setAttribute('autoplay', true);
+                video.setAttribute('playsinline', true);
+                video.addEventListener('play', onPlay);
+                // video.load();
+                video.play();
+                playing = true;
+            } else {
+                video.setAttribute('autoplay', false);
+                video.setAttribute('playsinline', false);
+                video.removeEventListener('play', onPlay);
+                document.body.classList.remove('case-video-playing');
+                video.pause();
+                playing = false;
+            }
         });
     }
 }

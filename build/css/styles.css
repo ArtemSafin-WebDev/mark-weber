@@ -1853,6 +1853,9 @@ main .container > *:first-child {
   height: 100%;
   opacity: 0;
   transition: opacity 0.2s; }
+  @media only screen and (max-width: 768px) {
+    .portfolio__bg-overlay {
+      opacity: 1; } }
 
 .portfolio__bg-content {
   background-size: cover;
@@ -1862,7 +1865,12 @@ main .container > *:first-child {
   width: 100%;
   height: 100%;
   transition: transform 0.2s ease-out;
-  transform: translateZ(0) scale(1.05); }
+  transform: translateZ(0) scale(1.05);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  font-family: 'object-fit: cover; object-position: center;'; }
 
 .portfolio__project-image {
   position: absolute;
@@ -2025,6 +2033,33 @@ main .container > *:first-child {
         padding-top: 40px;
         padding-bottom: 40px; } }
 
+.case-top-block__icon {
+  width: 70px;
+  height: 70px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  opacity: 0.6;
+  border-radius: 50%; }
+  @media only screen and (max-width: 360px) {
+    .case-top-block__icon {
+      margin-right: 12px; } }
+  .case-top-block__icon svg {
+    fill: white;
+    transition: opacity 0.2s;
+    width: 20px;
+    height: 20px; }
+    .case-top-block__icon svg.icon-play {
+      margin-left: 3px; }
+      .case-video-playing .case-top-block__icon svg.icon-play {
+        display: none; }
+    .case-top-block__icon svg.icon-pause {
+      display: none; }
+      .case-video-playing .case-top-block__icon svg.icon-pause {
+        display: block; }
+
 .case-top-block__heading {
   font-size: 32px;
   line-height: 45px;
@@ -2081,6 +2116,20 @@ main .container > *:first-child {
   .case-top-block__back-btn-icon svg {
     fill: black; }
 
+.case-top-block__content-left-column .back-btn {
+  transition: opacity .3s, visibility 0s linear .3s; }
+
+.case-video-playing .case-top-block__content-left-column .back-btn {
+  opacity: 0;
+  transition: .3s; }
+
+.case-top-block__content {
+  transition: opacity .3s, visibility 0s linear .3s; }
+
+.case-video-playing .case-top-block__heading {
+  opacity: 0;
+  transition: .3s; }
+
 .case-top-block__content-left-column {
   margin-right: 80px;
   display: flex;
@@ -2116,20 +2165,6 @@ main .container > *:first-child {
   .no-touch .case-top-block__video-link:hover svg,
   .touch .case-top-block__video-link:active svg {
     opacity: 1; }
-  .case-top-block__video-link svg {
-    fill: white;
-    margin-right: 25px;
-    opacity: 0.6;
-    transition: opacity 0.2s; }
-    @media only screen and (max-width: 768px) {
-      .case-top-block__video-link svg {
-        width: 70px;
-        height: 70px; } }
-    @media only screen and (max-width: 360px) {
-      .case-top-block__video-link svg {
-        width: 50px;
-        height: 50px;
-        margin-right: 12px; } }
 
 .case-details__single-image {
   display: block;
