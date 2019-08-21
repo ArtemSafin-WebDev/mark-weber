@@ -1,12 +1,15 @@
+
+import detectIt from 'detect-it';
+
 export default function() {
     ymaps.ready(init);
     function init() {
         const mapElement = document.getElementById('map');
 
         if (mapElement) {
-            var coords = mapElement.getAttribute('data-coords').split(',');
+            const coords = mapElement.getAttribute('data-coords').split(',');
             // Создание карты.
-            var myMap = new ymaps.Map(mapElement, {
+            const myMap = new ymaps.Map(mapElement, {
                 // Координаты центра карты.
                 // Порядок по умолчанию: «широта, долгота».
                 // Чтобы не определять координаты центра карты вручную,
@@ -18,12 +21,27 @@ export default function() {
                 controls: []
             });
 
-            var myPlacemark = new ymaps.Placemark(coords, {}, {
+            myMap.behaviors.disable('scrollZoom');
+
+            if (detectIt.hasTouch) {
+                myMap.behaviors.disable('drag');
+            }
+
+            const myPlacemark = new ymaps.Placemark(coords, {}, {
                 preset: 'islands#redDotIcon'
             });
             myMap.geoObjects.add(myPlacemark);
 
-
+            const zoomControl = new ymaps.control.ZoomControl({
+                options: {
+                    position: {
+                        right: 20,
+                        top: 20
+                    }
+                }
+            });
+    
+            myMap.controls.add(zoomControl);
 
            
         }

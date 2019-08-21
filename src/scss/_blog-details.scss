@@ -1,5 +1,6 @@
 .blog-details {
     margin-top: 100px;
+    padding-top: 100px;
     @include breakpoint(mobile) {
         margin-top: 50px;
     }

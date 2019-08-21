@@ -5,6 +5,7 @@
     flex-direction: column;
     z-index: 1;
     position: relative;
+    padding-top: 100px;
     @include breakpoint(mobile) {
         max-height: initial;
         height: auto;

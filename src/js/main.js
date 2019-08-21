@@ -13,6 +13,7 @@ import caseTopBlockVideo from './caseTopBlockVideo';
 import inlineYoutubeVideo from './inlineYoutubeVideo';
 import formValidation from './formValidation';
 import map from './map';
+import teamSlider from './teamSlider';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Полифилл .contains для IE 11
@@ -86,4 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Карта
 
     map()
+
+    // Слайдер команды, который появляется на мобильной ширине
+
+    teamSlider();
 });
