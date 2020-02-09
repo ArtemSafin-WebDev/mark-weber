@@ -906,14 +906,8 @@ img {
        object-fit: cover;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-    transition: 0.3s; }
-    .services__video-slide video.playing {
-      -webkit-animation-name: fadeIn;
-              animation-name: fadeIn;
-      -webkit-animation-duration: .4s;
-              animation-duration: .4s;
-      -webkit-animation-timing-function: ease-out;
-              animation-timing-function: ease-out; }
+    transition: 0.3s;
+    transform: translateZ(0) scale(1.1); }
 
 @-webkit-keyframes fadeIn {
   from {
