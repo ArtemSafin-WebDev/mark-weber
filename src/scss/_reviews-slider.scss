@@ -1,0 +1,443 @@
+.reviews-slider {
+    margin-top: 100px;
+    @include breakpoint(mobile) {
+        margin-top: 50px;
+    }
+    @include breakpoint(supersmall-mobile) {
+        margin-top: 0;
+    }
+}
+
+
+.reviews-slider__desc {
+    font-family: $proxima;
+    font-size: 23px;
+    line-height: 1.33;
+    color: black;
+    margin-right: 20px;
+    @include breakpoint(desktop) {
+        font-size: 20px;
+    }
+    @include breakpoint(laptop) {
+        font-size: 18px;
+    }
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        margin-top: 15px;
+    }
+}
+
+
+.reviews-slider__controls-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.reviews-slider__arrows {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    @include breakpoint(small-mobile) {
+        display: none;
+    }
+}
+
+
+.reviews-slider__arrow-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-color: $primary-saturated;
+    margin-right: 16px;
+    transition: all .2s;
+    position: relative;
+    z-index: 1;
+    outline: none;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $primary-medium;
+        z-index: -1;
+        transform: scale(0);
+        transition: transform .3s ease;
+    }
+    &--prev {
+        .reviews-slider__arrow-btn-content > svg {
+            margin-right: 3px;
+        }
+    }
+    &--next {
+        .reviews-slider__arrow-btn-content > svg {
+            margin-left: 3px;
+        }
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+
+
+    .no-touch &:hover {
+        &::before {
+            transform: scale(1);
+        }
+    }
+
+
+    &.swiper-button-disabled {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s, visibility 0s linear .2s;
+    }
+}
+
+
+.reviews-slider__arrow-btn-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    & > svg {
+        fill: black;
+    }
+}
+
+.reviews-slider__slider-wrapper {
+    margin-top: 42px;
+    @include breakpoint(small-mobile) {
+        margin-top: 32px;
+    }
+    .swiper-slide {
+        box-sizing: border-box;
+        height: auto;
+        width: 25%;
+        @include breakpoint(small-mobile) {
+            width: 65%;
+        }
+    }
+
+
+    .swiper-container {
+        @include breakpoint(small-mobile) {
+            overflow: visible;
+        }
+    }
+}
+
+.reviews-slider__card-photo-container {
+    border-radius: 4px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+
+
+    .no-touch &:hover {
+        .reviews-slider__card-photo-gradient-overlay {
+            opacity: 0;
+        }
+
+        .reviews-slider__card-photo-color-overlay {
+            opacity: 1;
+        }
+
+        .reviews-slider__content-top-block::before {
+            flex-grow: 0;
+        }
+
+        .reviews-slider__content-bottom-block {
+            transform: translateY(0);
+        }
+    }
+   
+    &::after {
+        content: '';
+        padding-bottom: 130%;
+        display: block;
+        width: 100%;
+    }
+}
+
+
+.reviews-slider__card {
+    border-top: 1px solid #DFDFDF;
+   
+}
+
+.reviews-slider__card-logo-container {
+    height: 60px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    @include breakpoint(laptop) {
+        height: 50px;
+    }
+
+    @include breakpoint(mobile) {
+        height: 40px;
+    }
+}
+
+
+.reviews-slider__card-logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.reviews-slider__card-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    @include objectFitCover();
+}
+
+
+.reviews-slider__card-photo-gradient-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(0deg, #000000 -52.94%, rgba(0, 0, 0, 0) 41.18%);
+    transition: opacity .2s;
+}
+
+
+.reviews-slider__card-photo-color-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(black, .56);
+    opacity: 0;
+    transition: opacity .2s;
+    z-index: -2;
+}
+
+
+.reviews-slider__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.reviews-slider__content-top-block,
+.reviews-slider__content-bottom-block {
+    padding: 25px;
+    @include breakpoint(desktop) {
+        padding: 20px;
+    }
+    @include breakpoint(laptop) {
+        padding: 15px;
+    }
+}
+
+.reviews-slider__content-top-block {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &::before {
+        content: '';
+        width: 1px;
+        height: 1px;
+        display: block;
+        flex-grow: 1;
+        transition: flex-grow .2s linear;
+    }
+}   
+
+.reviews-slider__content-bottom-block {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform .2s linear;
+    &::before {
+        content: '';
+        width: 1px;
+        height: 1px;
+        display: block;
+        flex-grow: 1;
+    }
+}
+
+.reviews-slider__person-name {
+    font-family: $proxima;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    @include breakpoint(laptop) {
+        font-size: 16px;
+    }
+}
+
+
+.reviews-slider__person-role {
+    font-size: 12px;
+    line-height: 1.2;
+    @include breakpoint(laptop) {
+        font-size: 10px;
+    }
+}
+
+
+
+.reviews-slider__review-text {
+    font-family: $proxima;
+    font-size: 23px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+
+    @include breakpoint(large-desktop) {
+        font-size: 20px;
+    }
+
+
+    @include breakpoint(desktop) {
+        font-size: 18px;
+    }
+
+
+    @include breakpoint(laptop) {
+        font-size: 16px;
+    }
+   
+}
+
+
+.reviews-slider__link {
+    color: #8C9197;
+    font-family: $proxima;
+    font-size: 12px;
+    line-height: 1.2;
+    align-self: flex-start;
+    border-bottom: 1px dotted #8C9197;
+    transition: color .2s, border-color .2s;
+    &:link,
+    &:visited {
+        color: #8C9197;
+    }
+
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: $primary-medium;
+        border-color: $primary-medium;
+    }
+}
+
+
+.reviews-slider__icon {
+    fill: $primary-medium;
+    margin-bottom: 10px;
+}
+
+
+.reviews-slider__card-project {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 18px;
+    color: #525252;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+
+.reviews-slider__card-project-link {
+    color: black;
+    font-family: $open-sans;
+    font-size: 12px;
+    line-height: 1.4;
+    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 14px;
+    margin-left: 6px;
+    background-color: $primary-color;
+    z-index: 1;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 14px;
+        background-color: $primary-saturated;
+        transition: transform .2s;
+        transform: scale(0);
+        z-index: -1;
+    }
+    &:link,
+    &:visited {
+        color: black;
+       
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        &::before {
+            transform: scale(1);
+        }
+    }
+
+    > svg {
+        flex-shrink: 0;
+        margin-left: 8px;
+        fill: black;
+    }
+}
+
+
+.reviews-slider__for-request {
+    font-family: $proxima;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #525252;
+    margin-top: 12px;
+    a {
+        &:link,
+        &:visited {
+            color: #525252;
+        }
+
+        .no-touch &:hover,
+        .touch &:active {
+            text-decoration: underline;
+        }
+    }
+}

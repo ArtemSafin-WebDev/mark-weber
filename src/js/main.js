@@ -14,6 +14,7 @@ import inlineYoutubeVideo from './inlineYoutubeVideo';
 import formValidation from './formValidation';
 import map from './map';
 import teamSlider from './teamSlider';
+import reviewsSlider from './reviewsSlider';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Полифилл .contains для IE 11
@@ -91,4 +92,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Слайдер команды, который появляется на мобильной ширине
 
     teamSlider();
+
+    // Слайдер отзывов
+
+    reviewsSlider();
 });
